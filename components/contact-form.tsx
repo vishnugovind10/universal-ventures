@@ -2,8 +2,8 @@
 
 import { FormEvent, useState } from "react";
 
-const FORM_ID = "YOUR_FORM_ID";
-const isConfigured = FORM_ID !== "YOUR_FORM_ID";
+const FORM_ID = "mwvydgon";
+const isConfigured = FORM_ID.length > 0;
 const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORM_ID}`;
 
 type SubmitState = "idle" | "submitting" | "error";
@@ -63,13 +63,6 @@ export function ContactForm() {
         tabIndex={-1}
         autoComplete="off"
       />
-
-      {!isConfigured ? (
-        <p className="border border-line px-4 py-3 font-mono text-xs leading-5 text-subtle">
-          Formspree form ID is not configured. Replace YOUR_FORM_ID before publishing
-          live submissions.
-        </p>
-      ) : null}
 
       <div className="grid gap-2">
         <label htmlFor="name" className="font-mono text-xs text-subtle">
