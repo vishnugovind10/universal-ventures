@@ -8,8 +8,7 @@ export function SiteFooter() {
         <div>
           <p className="font-serif text-2xl font-medium">{siteConfig.name}</p>
           <p className="mt-3 max-w-md text-sm leading-6 text-muted">
-            Economic systems architecture for resilient token economies,
-            coordination infrastructure, and institutional digital markets.
+            Designing survivable economic systems for emerging digital economies.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">

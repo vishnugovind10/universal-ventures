@@ -11,10 +11,10 @@ export function FocusAreaBlock({ area }: { area: FocusArea }) {
           </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          <Signal label="Problem space" value={area.problem} />
-          <Signal label="Systemic challenge" value={area.challenge} />
-          <Signal label="Why current approaches fail" value={area.failure} />
-          <Signal label="Universal Ventures approach" value={area.approach} />
+          <Signal label="Problem" value={area.problem} />
+          <Signal label="Pressure point" value={area.challenge} />
+          <Signal label="What breaks" value={area.failure} />
+          <Signal label="Design response" value={area.approach} />
         </div>
       </div>
     </article>

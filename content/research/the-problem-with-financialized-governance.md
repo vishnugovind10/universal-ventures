@@ -1,6 +1,6 @@
 ---
-title: "The Problem With Financialized Governance"
-summary: "A governance note on how voting power, token liquidity, leverage, and short-term market incentives can distort protocol decision-making."
+title: "Governance Fails When Markets Own the Vote"
+summary: "A governance note on how liquid voting power, leverage, delegation markets, and short-term incentives distort protocol decision-making."
 category: "Governance systems"
 status: "Working note"
 date: "2026-05-06"

@@ -40,10 +40,13 @@ export const metadata: Metadata = {
   publisher: "Universal Ventures",
   keywords: [
     "Universal Ventures",
+    "survivable economic systems",
+    "coordination architecture",
     "economic systems architecture",
     "coordination systems",
     "token economics",
     "protocol design",
+    "treasury architecture",
     "liquidity architecture",
     "governance systems",
   ],

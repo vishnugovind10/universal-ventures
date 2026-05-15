@@ -1,6 +1,6 @@
 ---
 title: "Coordination Before Growth"
-summary: "A short thesis on why protocol growth becomes fragile when capital, governance, liquidity, and operations scale faster than coordination capacity."
+summary: "A short thesis on why growth becomes fragile when capital, governance, liquidity, and operations scale faster than coordination capacity."
 category: "Governance analysis"
 status: "Working note"
 date: "2026-05-08"

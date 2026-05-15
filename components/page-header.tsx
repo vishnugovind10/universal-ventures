@@ -9,7 +9,7 @@ export function PageHeader({ eyebrow, title, lede }: PageHeaderProps) {
     <section className="border-b border-line">
       <div className="mx-auto w-full max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-16">
         <p className="font-mono text-sm text-subtle">{eyebrow}</p>
-        <h1 className="mt-8 max-w-full break-words font-serif text-3xl font-medium leading-none sm:max-w-5xl sm:text-5xl md:text-7xl">
+        <h1 className="mt-8 max-w-full break-words font-serif text-4xl font-medium leading-none sm:max-w-5xl sm:text-5xl md:text-7xl">
           {title}
         </h1>
         {lede ? (

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Universal Ventures",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vishnugovind10.github.io/universal-ventures",
   description:
-    "An independent economic systems and coordination design practice for resilient token economies, liquidity architecture, governance systems, and protocol infrastructure.",
+    "Designing survivable economic systems for emerging digital economies.",
 };
 
 export const navItems = [

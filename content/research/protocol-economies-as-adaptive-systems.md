@@ -1,6 +1,6 @@
 ---
-title: "Protocol Economies as Adaptive Systems"
-summary: "A framework note on why tokenized networks behave less like static financial products and more like adaptive coordination environments."
+title: "Why Protocol Economies Break Under Stress"
+summary: "A framework note on how tokenized networks adapt, route around constraints, and expose hidden coordination failures under pressure."
 category: "Framework essay"
 status: "Working note"
 date: "2026-05-10"

@@ -11,7 +11,7 @@ export function SiteHeader() {
             {siteConfig.name}
           </span>
           <span className="mt-2 block font-mono text-xs text-subtle">
-            Economic systems architecture
+            Coordination architecture
           </span>
         </Link>
         <div className="flex w-full min-w-0 flex-col gap-4 sm:w-auto sm:flex-row sm:items-center">

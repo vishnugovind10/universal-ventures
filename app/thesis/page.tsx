@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
-import { thesisSections } from "@/lib/content-model";
+import { ProtocolFeedbackLoop } from "@/components/system-visuals";
+import { protocolLoop, thesisSections } from "@/lib/content-model";
 
 export const metadata: Metadata = {
   title: "Thesis",
   description:
-    "Universal Ventures thesis on protocol economies as coordination machines.",
+    "Universal Ventures thesis on coordination breakdown, economic survivability, and protocol systems under pressure.",
 };
 
 export default function ThesisPage() {
@@ -13,41 +14,44 @@ export default function ThesisPage() {
     <>
       <PageHeader
         eyebrow="Thesis"
-        title="Protocol Economies Are Coordination Machines"
-        lede="Tokenized systems are adaptive economic environments. Their durability depends on whether incentives, markets, governance, and liquidity remain coherent when pressure arrives."
+        title="Economic systems fail before the market admits it."
+        lede="Protocols become fragile when incentives, liquidity, governance, and treasury constraints start optimizing against each other."
       />
 
       <article className="border-b border-line">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[0.3fr_0.7fr] md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:px-10 md:py-20 lg:grid-cols-[0.34fr_0.66fr] lg:px-16">
           <aside className="font-mono text-sm text-subtle">
             <p>Research memo</p>
-            <p className="mt-2">Coordination, constraint, survivability</p>
+            <p className="mt-3 max-w-xs leading-6">
+              Coordination breakdown, decision compression, survivability.
+            </p>
           </aside>
-          <div className="article-prose max-w-3xl">
-            <p>
-              Most token systems do not fail because the technology stops working.
-              They fail because incentives collapse once users, capital, and
-              institutions begin optimizing against the system.
-            </p>
-            <p>
-              Complexity often looks like sophistication in the early phase of a
-              protocol. Under stress, it becomes a coordination tax. Every extra
-              mechanism introduces a new dependency, a new governance obligation,
-              and a new path for reflexive behavior.
-            </p>
-            <p>
-              Durable protocol economies emerge from strong constraints and coherent
-              coordination. Markets, governance, liquidity, and incentives have to
-              be designed together because failure does not respect internal
-              org charts or technical boundaries.
-            </p>
+          <div className="grid gap-10">
+            <div className="max-w-3xl">
+              <p className="text-2xl leading-snug text-foreground">
+                The hardest problem in Web3 is no longer execution. It is
+                survivable coordination.
+              </p>
+              <p className="mt-6 text-base leading-7 text-muted">
+                Tokenized systems are adaptive economic environments. They do not
+                fail linearly. Pressure moves through liquidity, incentives,
+                governance, and treasury capacity until the system either absorbs
+                it or amplifies it.
+              </p>
+            </div>
 
-            {thesisSections.map((section) => (
-              <section key={section.title}>
-                <h2>{section.title}</h2>
-                <p>{section.body}</p>
-              </section>
-            ))}
+            <ProtocolFeedbackLoop steps={protocolLoop} />
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {thesisSections.map((section) => (
+                <section key={section.title} className="border-t border-line pt-5">
+                  <h2 className="font-serif text-3xl font-medium leading-tight">
+                    {section.title}
+                  </h2>
+                  <p className="mt-4 text-sm leading-6 text-muted">{section.body}</p>
+                </section>
+              ))}
+            </div>
           </div>
         </div>
       </article>
