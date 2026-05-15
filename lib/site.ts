@@ -19,8 +19,3 @@ export const socialLinks = [
   { label: "Medium", href: "https://vishnugovind10.medium.com/" },
   { label: "GitHub", href: "https://github.com/vishnugovind10" },
 ];
-
-export const contactLinks = [
-  ...socialLinks,
-  { label: "Email", href: "mailto:research@universal.ventures" },
-];

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
-import { contactLinks } from "@/lib/site";
+import { socialLinks } from "@/lib/site";
 
 const collaborationModes = [
   "Strategic collaborations",
@@ -27,22 +28,37 @@ export default function ContactPage() {
       <section className="border-b border-line">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[0.3fr_0.7fr] md:px-10 lg:px-16">
           <aside className="font-mono text-sm text-subtle">
-            <p>Channels</p>
+            <p>Inquiry</p>
           </aside>
           <div className="grid gap-12">
-            <div className="grid border-t border-line">
-              {contactLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
-                  className="grid gap-2 border-b border-line py-6 no-underline md:grid-cols-[0.26fr_0.74fr]"
-                >
-                  <span className="font-mono text-xs text-subtle">{link.label}</span>
-                  <span className="text-lg text-foreground">{link.href.replace("mailto:", "")}</span>
-                </a>
-              ))}
+            <div className="max-w-3xl">
+              <p className="text-xl leading-8 text-foreground">
+                Research inquiries, protocol architecture discussions, strategic
+                coordination work, and collaboration conversations.
+              </p>
+              <p className="mt-4 text-base leading-7 text-muted">
+                Use the form below to get in touch.
+              </p>
+            </div>
+
+            <ContactForm />
+
+            <div>
+              <p className="font-mono text-sm text-subtle">Reference channels</p>
+              <div className="mt-6 grid border-t border-line">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid gap-2 border-b border-line py-6 no-underline md:grid-cols-[0.26fr_0.74fr]"
+                  >
+                    <span className="font-mono text-xs text-subtle">{link.label}</span>
+                    <span className="break-words text-lg text-foreground">{link.href}</span>
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div>
