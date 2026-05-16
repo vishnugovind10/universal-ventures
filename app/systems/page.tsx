@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { FocusAreaBlock } from "@/components/focus-area-block";
 import { PageHeader } from "@/components/page-header";
+import { ProgressivePanel } from "@/components/progressive-panel";
 import { FailureModeMap, VisualCaseStudyGrid } from "@/components/system-visuals";
 import {
+  coreSystemDomains,
   economicConsequences,
   failureModes,
   focusAreas,
@@ -34,10 +35,28 @@ export default function SystemsPage() {
               costs, and where architecture can reduce fragility.
             </p>
           </div>
-          <div className="border-t border-line">
-            {focusAreas.map((area) => (
-              <FocusAreaBlock key={area.index} area={area} />
-            ))}
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {coreSystemDomains.map((domain, index) => {
+              const area = focusAreas[index]!;
+
+              return (
+                <ProgressivePanel
+                  key={domain.title}
+                  index={area.index}
+                  title={domain.title}
+                  summary={domain.short}
+                  consequence={domain.consequence}
+                  actionLabel={domain.action}
+                >
+                  <div className="grid gap-5">
+                    <Signal label="Problem" value={area.problem} />
+                    <Signal label="Pressure point" value={area.challenge} />
+                    <Signal label="What breaks" value={area.failure} />
+                    <Signal label="Design response" value={area.approach} />
+                  </div>
+                </ProgressivePanel>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -105,5 +124,14 @@ export default function SystemsPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function Signal({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="border-t border-line pt-4">
+      <h3 className="font-mono text-xs text-subtle">{label}</h3>
+      <p className="mt-3 text-sm leading-6 text-muted">{value}</p>
+    </div>
   );
 }

@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/page-header";
 import { socialLinks } from "@/lib/site";
 
 const collaborationModes = [
+  "System pressure mapping",
   "Protocol design",
   "Treasury architecture",
   "Incentive restructuring",
@@ -42,13 +43,14 @@ export default function ContactPage() {
           <div className="grid gap-12">
             <div className="max-w-3xl">
               <p className="text-2xl leading-snug text-foreground">
-                Use the form for research-led conversations around survivable
-                economic systems, protocol architecture, and coordination
-                infrastructure.
+                Use the form for research-led conversations about systems under
+                pressure: incentives, treasury, governance, liquidity, and
+                coordination architecture.
               </p>
               <p className="mt-5 text-base leading-7 text-muted">
-                A direct intake surface for serious systems discussions, without
-                sales pressure or performative urgency.
+                Useful inquiries usually involve a concrete architecture question,
+                a failure pattern, or a system that needs clearer operating
+                constraints.
               </p>
             </div>
 

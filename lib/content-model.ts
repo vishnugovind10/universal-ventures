@@ -21,6 +21,119 @@ export const intersections = [
   "Institutional usability",
 ];
 
+export const progressiveDisclosureLabels = {
+  exploreSystem: "Explore System",
+  inspectDynamics: "Inspect Dynamics",
+  viewMechanism: "View Mechanism",
+  expandAnalysis: "Expand Analysis",
+  openFramework: "Open Framework",
+  traceInteractions: "Trace Interactions",
+  viewFailureModes: "View Failure Modes",
+  exploreCoordinationLogic: "Explore Coordination Logic",
+};
+
+export const whatWeActuallyDo = {
+  title: "Design systems that remain functional under real market pressure.",
+  summary:
+    "Universal Ventures helps protocols, DAOs, digital asset networks, and institutions turn token, treasury, governance, liquidity, and coordination complexity into operating architecture.",
+  signals: [
+    "Map how participants actually optimize.",
+    "Clarify what must hold under volatility.",
+    "Convert failure patterns into design constraints.",
+  ],
+};
+
+export type ProblemOutcomeCard = {
+  problem: string;
+  outcome: string;
+  summary: string;
+  consequence: string;
+  action: string;
+  detail: string;
+};
+
+export const problemOutcomeCards: ProblemOutcomeCard[] = [
+  {
+    problem: "Incentive Leakage",
+    outcome: "Durable Participation",
+    summary: "Prevent rewards from funding behavior the system cannot retain.",
+    consequence: "Subsidies become expensive churn when actors farm, hedge, and exit faster than value accrues.",
+    action: progressiveDisclosureLabels.traceInteractions,
+    detail:
+      "The work traces how emissions, staking rewards, delegation, vesting, and user behavior route through the system. The goal is to identify where incentives leak and redesign constraints around behavior that can survive after subsidies change.",
+  },
+  {
+    problem: "Governance Fragility",
+    outcome: "Better Coordination",
+    summary: "Reduce the decision surface before pressure turns governance into latency.",
+    consequence: "Legitimacy weakens when voting power, delegation inertia, and escalation rights cannot respond in time.",
+    action: progressiveDisclosureLabels.exploreCoordinationLogic,
+    detail:
+      "Governance is treated as an operating system: what requires broad legitimacy, what needs delegated authority, what should be pre-constrained, and what attack surfaces emerge when decisions become liquid or time-sensitive.",
+  },
+  {
+    problem: "Liquidity Instability",
+    outcome: "Sustainable Growth",
+    summary: "Separate productive market depth from rented liquidity.",
+    consequence: "Capital becomes extractive when liquidity programs overpay for presence without improving routing or retention.",
+    action: progressiveDisclosureLabels.inspectDynamics,
+    detail:
+      "The analysis separates depth quality, market-maker dependence, routing leakage, emissions pressure, and exit behavior. The design objective is liquidity that supports system control instead of temporarily masking fragility.",
+  },
+  {
+    problem: "Treasury Misalignment",
+    outcome: "Economic Resilience",
+    summary: "Align reserves, emissions, liquidity, and runway before drawdown creates reflexivity.",
+    consequence: "Treasury health deteriorates quickly when confidence, token price, liquidity, and operating capacity move together.",
+    action: progressiveDisclosureLabels.viewMechanism,
+    detail:
+      "Treasury architecture is mapped across reserve policy, budget constraints, emissions, unlocks, liquidity support, and stress scenarios. The output is a clearer operating envelope for how the system funds growth without amplifying market pressure.",
+  },
+];
+
+export type SystemBreakPattern = {
+  title: string;
+  summary: string;
+  consequence: string;
+  action: string;
+  detail: string;
+};
+
+export const whySystemsBreak: SystemBreakPattern[] = [
+  {
+    title: "Token systems collapse when incentives reward the wrong behavior.",
+    summary: "Measured activity can grow while durable participation weakens.",
+    consequence: "Emissions become a cost center instead of a coordination layer.",
+    action: progressiveDisclosureLabels.inspectDynamics,
+    detail:
+      "A token system can look healthy while users, validators, delegates, and capital providers optimize around extraction. The important question is not whether incentives create motion, but whether the motion remains useful when the incentive changes.",
+  },
+  {
+    title: "Governance fails when legitimacy and response speed diverge.",
+    summary: "The system can be participatory and still unable to make hard decisions.",
+    consequence: "Capture, delay, or ambiguity becomes an operating risk.",
+    action: progressiveDisclosureLabels.exploreCoordinationLogic,
+    detail:
+      "Under stress, governance must route decisions through clear authority, constraints, and escalation paths. Without that structure, token liquidity, delegation inertia, voter apathy, and short-term incentives become part of the attack surface.",
+  },
+  {
+    title: "Liquidity becomes extractive when it is rented without control.",
+    summary: "Depth is not the same thing as resilience.",
+    consequence: "Markets can appear liquid until incentives fall or volatility arrives.",
+    action: progressiveDisclosureLabels.traceInteractions,
+    detail:
+      "Liquidity programs should be evaluated by routing quality, capital behavior, exit risk, and strategic usefulness. Otherwise, protocols pay for temporary depth while losing control of where value, users, and price discovery move.",
+  },
+  {
+    title: "Coordination weakens when growth fragments the system.",
+    summary: "Expansion can add surface area faster than operating capacity.",
+    consequence: "Subnets, apps, markets, and contributors optimize locally while the base system loses coherence.",
+    action: progressiveDisclosureLabels.viewFailureModes,
+    detail:
+      "Growth increases the number of actors, incentives, interfaces, and failure paths the system must coordinate. Survivable architecture defines what should remain shared, what can become modular, and where value must route back into the core system.",
+  },
+];
+
 export type SolutionArea = {
   title: string;
   short: string;
@@ -70,6 +183,48 @@ export const whatWeDo = solutionAreas.map((area) => ({
   title: area.title,
   description: area.description,
 }));
+
+export type CoreSystemDomain = SolutionArea & {
+  consequence: string;
+  action: string;
+  detail: string;
+};
+
+export const coreSystemDomains: CoreSystemDomain[] = solutionAreas.map((area, index) => {
+  const consequences = [
+    "Poorly routed incentives can make activity look strong while participation quality decays.",
+    "Weak reserve logic turns market stress into operating stress.",
+    "Unclear decision rights make urgent coordination expensive.",
+    "Expansion can fragment value flow, security budgets, and participant attention.",
+    "Rented liquidity can become an exit surface instead of infrastructure.",
+    "Institutional adoption slows when risk, control, and obligations remain illegible.",
+  ];
+
+  const details = [
+    "Stress-test rewards, penalties, staking, vesting, delegation, and user behavior against actors who optimize, hedge, farm, and exit.",
+    "Connect runway, emissions, unlocks, liquidity support, and reserve policy into a single operating envelope.",
+    "Clarify what governance should decide, what should be constrained in advance, and how the system responds when timing matters.",
+    "Map validator incentives, security cost, value routing, subnet growth, and ecosystem leakage before expansion compounds complexity.",
+    "Separate useful market depth from capital that only stays while subsidies are high.",
+    "Translate digital economy design into controls, risk surfaces, obligations, liquidity assumptions, and operating language.",
+  ];
+
+  const actions = [
+    progressiveDisclosureLabels.inspectDynamics,
+    progressiveDisclosureLabels.viewMechanism,
+    progressiveDisclosureLabels.exploreCoordinationLogic,
+    progressiveDisclosureLabels.traceInteractions,
+    progressiveDisclosureLabels.viewFailureModes,
+    progressiveDisclosureLabels.openFramework,
+  ];
+
+  return {
+    ...area,
+    consequence: consequences[index],
+    detail: details[index],
+    action: actions[index],
+  };
+});
 
 export type FailureMode = {
   title: string;
@@ -228,6 +383,42 @@ export const protocolLoop = [
   {
     title: "Survivability",
     description: "The system either absorbs pressure or amplifies it.",
+  },
+];
+
+export const strategicEngagementSteps = [
+  {
+    title: "Pressure map",
+    summary: "Clarify where incentives, liquidity, governance, treasury, and participant behavior already create stress.",
+    detail:
+      "The starting point is not a generic audit. It is a system map: what actors want, where value routes, which constraints matter, and which feedback loops can become reflexive.",
+  },
+  {
+    title: "Failure model",
+    summary: "Identify the few breakdown patterns that would materially change survivability.",
+    detail:
+      "The work compresses broad complexity into the risks that matter most: leakage, capture, runway pressure, liquidity fragility, governance latency, and coordination fragmentation.",
+  },
+  {
+    title: "Architecture response",
+    summary: "Translate analysis into constraints, mechanisms, operating logic, and decision paths.",
+    detail:
+      "Outputs are designed for execution: clearer incentive structures, treasury envelopes, governance rights, liquidity programs, and coordination rules that teams can actually operate.",
+  },
+];
+
+export const observatoryZones = [
+  {
+    title: "Failure dynamics",
+    description: "How incentives, liquidity, governance, and treasury systems destabilize under pressure.",
+  },
+  {
+    title: "Market structure",
+    description: "How routing, depth quality, emissions, and capital behavior shape protocol control.",
+  },
+  {
+    title: "Coordination architecture",
+    description: "How decision rights, constraints, and institutional usability determine survivability.",
   },
 ];
 

@@ -22,7 +22,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="Anticipatory coordination architecture for digital economies."
-        lede="Universal Ventures is built around a simple operating question: how does this system break before it scales?"
+        lede="Universal Ventures is built around a simple operating question: what has to remain true when this system meets real market pressure?"
       />
 
       <section className="border-b border-line">
@@ -46,6 +46,12 @@ export default function AboutPage() {
               Universal Ventures works where protocol economics, coordination
               systems, treasury constraints, governance rights, and institutional
               usability become one architecture problem.
+            </p>
+            <p className="mt-6 text-base leading-7 text-muted">
+              The role is not to add abstraction. It is to make system pressure
+              legible: where incentives leak, where governance slows, where
+              liquidity extracts, and which constraints can turn analysis into
+              operating decisions.
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">

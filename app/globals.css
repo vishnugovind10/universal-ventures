@@ -2,15 +2,15 @@
 
 :root {
   color-scheme: dark;
-  --background: #050505;
+  --background: #070706;
   --foreground: #f5f5f0;
   --muted: #aaa9a2;
   --subtle: #72716b;
-  --line: #2c2c29;
-  --line-strong: #56544e;
-  --surface: #0c0c0b;
-  --surface-muted: #151513;
-  --inverse: #050505;
+  --line: #302f2b;
+  --line-strong: #5b584f;
+  --surface: #10100e;
+  --surface-muted: #181713;
+  --inverse: #070706;
   --inverse-foreground: #f5f5f0;
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/article-card";
 import { PageHeader } from "@/components/page-header";
+import { observatoryZones } from "@/lib/content-model";
 import { getAllResearchArticles } from "@/lib/research";
 
 const researchModes = [
@@ -46,6 +47,17 @@ export default function ResearchPage() {
               economic systems destabilize, where leverage sits, and what protocol
               architecture has to make legible.
             </p>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {observatoryZones.map((zone, index) => (
+                <article key={zone.title} className="border border-line bg-surface/45 p-5">
+                  <p className="font-mono text-xs text-subtle">zone 0{index + 1}</p>
+                  <h2 className="mt-8 text-lg font-semibold">{zone.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {zone.description}
+                  </p>
+                </article>
+              ))}
+            </div>
             <div className="mt-12 border-t border-line">
               {articles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
