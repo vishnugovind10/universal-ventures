@@ -22,16 +22,16 @@ export function HeroSystemMap() {
   ];
 
   return (
-    <div className="relative overflow-hidden border border-line bg-surface/60 p-4 sm:p-6">
+    <div className="relative overflow-hidden border border-line bg-surface p-4 shadow-sm shadow-line/30 sm:p-6">
       <div className="mb-5 flex items-center justify-between gap-4 border-b border-line pb-4">
-        <p className="font-mono text-xs text-subtle">Live system map</p>
-        <p className="font-mono text-xs text-muted">pressure paths</p>
+        <p className="font-mono text-xs text-subtle">Economic architecture map</p>
+        <p className="font-mono text-xs text-accent">pressure paths</p>
       </div>
 
       <svg
         aria-hidden="true"
         viewBox="0 0 460 390"
-        className="h-auto w-full text-line-strong"
+        className="h-auto w-full text-accent"
       >
         <path
           className="uv-flow-line"
@@ -74,7 +74,7 @@ export function HeroSystemMap() {
               strokeWidth="1"
               style={{ animationDelay: `${index * 140}ms` }}
             />
-            <circle cx={node.x} cy={node.y} r="4" fill="var(--foreground)" />
+            <circle cx={node.x} cy={node.y} r="4" fill="var(--accent)" />
           </g>
         ))}
       </svg>

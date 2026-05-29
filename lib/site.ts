@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Universal Ventures",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vishnugovind10.github.io/universal-ventures",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://universal-ventures.vercel.app",
   description:
-    "Designing survivable economic systems for emerging digital economies.",
+    "Professional economic systems architecture for emerging digital economies.",
 };
 
 export const navItems = [

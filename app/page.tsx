@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
+  AudienceSegments,
   CoreSystemDomains,
   InteractiveSystemsLayer,
+  ProfessionalEcosystem,
+  ProfessionalSignalStrip,
   StrategicEngagement,
   WhatWeActuallyDo,
   WhySystemsBreak,
@@ -17,23 +20,23 @@ export default function Home() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl gap-12 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-10 md:py-20 lg:px-16">
+        <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl gap-12 px-6 py-16 md:grid-cols-[0.88fr_1.12fr] md:items-center md:px-10 md:py-20 lg:px-16">
           <div>
-            <p className="font-mono text-sm text-subtle">Universal Ventures</p>
-            <h1 className="mt-8 max-w-4xl break-words font-serif text-3xl font-medium leading-none min-[420px]:text-4xl sm:text-6xl md:text-7xl">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              Universal Ventures
+            </p>
+            <h1 className="mt-8 max-w-4xl break-words text-4xl font-semibold leading-[0.95] tracking-tight min-[420px]:text-5xl sm:text-6xl md:text-7xl">
               {positioning.headline}
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-8 text-muted md:text-2xl md:leading-9">
-              We design token, governance, treasury, liquidity, and coordination
-              systems for protocols that need to remain functional under real
-              market pressure.
+              {positioning.subheadline}
             </p>
 
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               {positioning.trustStrip.map((item) => (
                 <span
                   key={item}
-                  className="w-fit max-w-full border border-line px-3 py-2 font-mono text-xs text-subtle"
+                  className="w-fit max-w-full border border-line bg-surface px-3 py-2 font-mono text-xs text-muted shadow-sm shadow-line/20"
                 >
                   {item}
                 </span>
@@ -43,9 +46,9 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex border border-foreground bg-foreground px-5 py-3 font-mono text-xs text-background no-underline transition-colors hover:bg-background hover:text-foreground"
+                className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
               >
-                Discuss Your System
+                Connect With Us
               </Link>
               <Link
                 href="/research"
@@ -60,7 +63,10 @@ export default function Home() {
         </div>
       </section>
 
+      <ProfessionalSignalStrip />
+      <ProfessionalEcosystem />
       <WhatWeActuallyDo />
+      <AudienceSegments />
       <WhySystemsBreak />
       <CoreSystemDomains />
       <InteractiveSystemsLayer />

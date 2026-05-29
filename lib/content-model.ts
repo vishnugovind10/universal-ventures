@@ -1,14 +1,14 @@
 export const positioning = {
-  headline: "Designing Survivable Economic Systems for Web3",
+  headline: "Economic Infrastructure for Emerging Digital Economies",
   subheadline:
-    "We help protocols and digital economies solve coordination, treasury, incentive, and market-structure problems before they become existential failures.",
+    "Universal Ventures helps protocols, DAOs, digital asset networks, and institutions design incentive, treasury, governance, liquidity, and coordination systems that remain functional under real market pressure.",
   shortDescription:
-    "Anticipatory coordination architecture for emerging digital economies.",
+    "Professional economic systems architecture for emerging digital economies.",
   trustStrip: [
-    "Protocol Architecture",
-    "Treasury Systems",
-    "Coordination Design",
-    "Incentive Infrastructure",
+    "Protocol economics",
+    "Treasury systems",
+    "Governance architecture",
+    "Liquidity coordination",
   ],
 };
 
@@ -33,15 +33,84 @@ export const progressiveDisclosureLabels = {
 };
 
 export const whatWeActuallyDo = {
-  title: "Design systems that remain functional under real market pressure.",
+  title: "Architecture, intelligence, and operating models for digital economies.",
   summary:
-    "Universal Ventures helps protocols, DAOs, digital asset networks, and institutions turn token, treasury, governance, liquidity, and coordination complexity into operating architecture.",
+    "The practice connects economic design, system stress testing, governance structure, liquidity strategy, and institutional translation into one coherent operating surface.",
   signals: [
-    "Map how participants actually optimize.",
+    "Map how participants optimize.",
     "Clarify what must hold under volatility.",
-    "Convert failure patterns into design constraints.",
+    "Translate pressure into operating constraints.",
   ],
 };
+
+export const professionalSignals = [
+  {
+    label: "Architecture",
+    title: "Economic systems that can be operated, governed, and explained.",
+    description:
+      "Design token, treasury, governance, and liquidity systems around pressure, not only launch assumptions.",
+  },
+  {
+    label: "Intelligence",
+    title: "Research that identifies how systems break before they scale.",
+    description:
+      "Surface incentive leakage, liquidity extraction, governance latency, and reflexive treasury exposure early.",
+  },
+  {
+    label: "Implementation",
+    title: "Decision structures for teams managing real market behavior.",
+    description:
+      "Turn complex system dynamics into constraints, tradeoffs, operating models, and coordination paths.",
+  },
+];
+
+export const audienceSegments = [
+  {
+    title: "Protocols",
+    description:
+      "Design incentives, emissions, staking, governance, and market structure for systems moving from launch to durable operation.",
+    action: "Strengthen Protocol Architecture",
+  },
+  {
+    title: "DAOs",
+    description:
+      "Clarify decision rights, treasury policy, delegation, escalation paths, and coordination capacity under volatility.",
+    action: "Improve Coordination Systems",
+  },
+  {
+    title: "Digital asset networks",
+    description:
+      "Model how validators, liquidity, subnets, applications, and token flows interact as network complexity increases.",
+    action: "Map Network Economics",
+  },
+  {
+    title: "Institutions",
+    description:
+      "Translate protocol economics into risk surfaces, controls, obligations, liquidity assumptions, and operating logic.",
+    action: "Make Systems Legible",
+  },
+];
+
+export const insightHighlights = [
+  {
+    type: "System note",
+    title: "Most protocol failures are coordination failures.",
+    summary:
+      "The visible failure is often price, governance, or liquidity. The root failure is usually system design under pressure.",
+  },
+  {
+    type: "Operating view",
+    title: "Treasury, liquidity, and incentives should be designed together.",
+    summary:
+      "When these systems separate, protocols lose control exactly when volatility makes control most valuable.",
+  },
+  {
+    type: "Research focus",
+    title: "Institutional adoption requires economic legibility.",
+    summary:
+      "Serious participants need to understand constraints, obligations, control rights, and risk before they can trust the system.",
+  },
+];
 
 export type ProblemOutcomeCard = {
   problem: string;

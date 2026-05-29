@@ -12,8 +12,11 @@ import {
   coreSystemDomains,
   economicConsequences,
   failureModes,
+  audienceSegments,
+  insightHighlights,
   principles,
   problemOutcomeCards,
+  professionalSignals,
   protocolLoop,
   strategicEngagementSteps,
   visualCaseStudies,
@@ -50,6 +53,93 @@ export function WhatWeActuallyDo() {
         </div>
 
         <ProblemOutcomeGrid />
+      </div>
+    </section>
+  );
+}
+
+export function ProfessionalSignalStrip() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 md:grid-cols-3 md:px-10 lg:px-16">
+        {insightHighlights.map((item) => (
+          <article key={item.title} className="border-l border-line pl-5">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              {item.type}
+            </p>
+            <h2 className="mt-4 text-lg font-semibold leading-snug">{item.title}</h2>
+            <p className="mt-3 text-sm leading-6 text-muted">{item.summary}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function ProfessionalEcosystem() {
+  return (
+    <section className="border-b border-line bg-surface-muted/50">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.36fr_0.64fr] lg:px-16">
+        <div>
+          <p className="font-mono text-sm text-subtle">Professional infrastructure</p>
+          <h2 className="mt-8 max-w-md font-serif text-4xl font-medium leading-none md:text-5xl">
+            A clearer operating layer for economic systems.
+          </h2>
+          <p className="mt-6 max-w-md text-base leading-7 text-muted">
+            Inspired by institutional financial platforms: clear value,
+            integrated capabilities, and trustworthy decision surfaces.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {professionalSignals.map((signal) => (
+            <article
+              key={signal.label}
+              className="border border-line bg-surface p-6 shadow-sm shadow-line/20"
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {signal.label}
+              </p>
+              <h3 className="mt-8 text-xl font-semibold leading-tight">
+                {signal.title}
+              </h3>
+              <p className="mt-4 text-sm leading-6 text-muted">
+                {signal.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function AudienceSegments() {
+  return (
+    <section className="border-b border-line">
+      <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Who it serves"
+          title="Built for teams operating complex digital economies."
+          copy="The same economic system can look different to a protocol team, DAO, network operator, or institution. The architecture has to remain legible to each of them."
+        />
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {audienceSegments.map((segment) => (
+            <article
+              key={segment.title}
+              className="group border border-line bg-surface p-6 shadow-sm shadow-line/20 transition-colors hover:border-accent"
+            >
+              <h3 className="text-2xl font-semibold leading-tight">
+                {segment.title}
+              </h3>
+              <p className="mt-5 text-sm leading-6 text-muted">
+                {segment.description}
+              </p>
+              <p className="mt-8 border-t border-line pt-4 font-mono text-xs text-accent">
+                {segment.action}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

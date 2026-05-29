@@ -72,11 +72,10 @@ function ThemeScript() {
 (() => {
   try {
     const stored = localStorage.getItem("uv-theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const theme = stored === "light" || stored === "dark" ? stored : prefersLight ? "light" : "dark";
+    const theme = stored === "light" || stored === "dark" ? stored : "light";
     document.documentElement.dataset.theme = theme;
   } catch {
-    document.documentElement.dataset.theme = "dark";
+    document.documentElement.dataset.theme = "light";
   }
 })();
 `;

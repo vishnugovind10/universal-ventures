@@ -11,6 +11,7 @@ systems.
 - Tailwind CSS v4
 - Local Markdown research entries
 - Static export for GitHub Pages
+- Production deployment on Vercel
 
 ## Local Development
 
@@ -35,6 +36,23 @@ To preview the exported site:
 ```sh
 npm run serve
 ```
+
+## Vercel Production Deployment
+
+The production deployment is linked to the Vercel project:
+
+```txt
+https://universal-ventures.vercel.app/
+```
+
+Deploy with:
+
+```sh
+npx vercel --prod --yes
+```
+
+The project uses the default empty `basePath` on Vercel. Keep `PAGES_BASE_PATH`
+unset for Vercel builds.
 
 ## GitHub Pages
 
