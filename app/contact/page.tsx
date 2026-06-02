@@ -3,6 +3,13 @@ import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
 import { engagementReasons, scopeAnchors } from "@/lib/content-model";
 
+const intakeSignals = [
+  "Current system context",
+  "Decision or risk surface",
+  "Relevant artifacts or assumptions",
+  "Preferred engagement scope",
+];
+
 export const metadata: Metadata = {
   title: "Contact",
   description:
@@ -44,6 +51,14 @@ export default function ContactPage() {
                 Share the system context, current concern, and whether the need is
                 assessment, architecture, or ongoing advisory cadence.
               </p>
+            </div>
+
+            <div className="grid gap-3 border-t border-line pt-6 sm:grid-cols-2 lg:grid-cols-4">
+              {intakeSignals.map((signal) => (
+                <p key={signal} className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                  {signal}
+                </p>
+              ))}
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">

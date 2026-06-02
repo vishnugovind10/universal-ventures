@@ -1,12 +1,72 @@
 import Link from "next/link";
+import { ProgressivePanel } from "@/components/progressive-panel";
 import { ProofVisual } from "@/components/proof-visuals";
 import {
   advisoryServices,
   evidenceMetrics,
+  observatoryHighlights,
+  operatingModel,
+  problemSpace,
   selectedWork,
+  scopeAnchors,
   systemArtifacts,
+  trustSignals,
+  validationInfrastructure,
   visualProofExamples,
 } from "@/lib/content-model";
+
+export function TrustLayer() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 lg:px-16">
+        <div className="grid gap-4 md:grid-cols-4">
+          {evidenceMetrics.map((metric) => (
+            <article key={metric.label} className="border-l border-line pl-5">
+              <p className="text-3xl font-semibold leading-none text-foreground">
+                {metric.value}
+              </p>
+              <h2 className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {metric.label}
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-muted">{metric.detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-4 border-t border-line pt-8 lg:grid-cols-[0.32fr_0.68fr]">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Trust layer
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight">
+              Evidence before claims.
+            </h2>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            {trustSignals.map((signal) => (
+              <p key={signal} className="border-t border-line pt-4 text-sm leading-6 text-muted">
+                {signal}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {selectedWork.map((work) => (
+            <article key={work.context} className="border border-line bg-background p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {work.context}
+              </p>
+              <Signal label="Problem" value={work.problem} />
+              <Signal label="Artifact evidence" value={work.evidence} />
+              <Signal label="Uncertainty reduced" value={work.outcome} />
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function EvidenceStrip() {
   return (
@@ -23,6 +83,30 @@ export function EvidenceStrip() {
             <p className="mt-3 text-sm leading-6 text-muted">{metric.detail}</p>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+export function ProblemSpace() {
+  return (
+    <section className="border-b border-line">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Problem space"
+          title="System failures show up as economic loss, not abstract design defects."
+          copy="The work starts by locating failure modes that create capital inefficiency, treasury depletion, governance capture, liquidity fragility, exploit surfaces, or coordination breakdown."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {problemSpace.map((item) => (
+            <article key={item.title} className="border border-line bg-surface p-5">
+              <h3 className="text-xl font-semibold leading-tight">{item.title}</h3>
+              <Signal label="Economic consequence" value={item.consequence} />
+              <Signal label="Mechanism" value={item.mechanism} />
+              <Signal label="Artifact" value={item.artifact} />
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -54,14 +138,14 @@ export function SelectedWork() {
   );
 }
 
-export function SelectedArtifacts() {
+export function ArtifactInfrastructure() {
   return (
     <section className="border-b border-line bg-surface-muted/55">
       <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
         <SectionIntro
-          eyebrow="Selected systems & artifacts"
+          eyebrow="Artifact infrastructure"
           title="Proof that the work connects ideas to implementation."
-          copy="Each artifact demonstrates an applied capability: execution logic, market infrastructure, funding analytics, or economic modeling."
+          copy="Artifacts are the delivery surface: they make assumptions, tradeoffs, and residual risk reviewable before teams commit capital or governance attention."
         />
         <div className="mt-10 grid gap-5">
           {systemArtifacts.map((artifact) => (
@@ -100,10 +184,10 @@ export function SelectedArtifacts() {
         <div className="mt-12 border-t border-line pt-10">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Artifact examples
+              Proof artifacts
             </p>
             <h3 className="mt-5 text-3xl font-semibold leading-tight">
-              The work produces reviewable maps, matrices, and system outputs.
+              Reviewable maps, matrices, and system outputs reduce delivery uncertainty.
             </h3>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -127,24 +211,149 @@ export function SelectedArtifacts() {
   );
 }
 
-export function AdvisoryServices() {
+export const SelectedArtifacts = ArtifactInfrastructure;
+
+export function CapabilityMatrix() {
   return (
     <section className="border-b border-line">
       <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
         <SectionIntro
-          eyebrow="What we do"
-          title="Four scoped advisory tracks. Each produces artifacts."
-          copy="The work is evidence-backed, research-driven, and implementation-focused. Each engagement should reduce uncertainty or produce a decision surface."
+          eyebrow="Capabilities"
+          title="Four delivery tracks. Each connects a system problem to a concrete artifact."
+          copy="The practice is structured around economic consequence, mechanism review, and outputs a protocol or institution can use in decisions."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {advisoryServices.map((service) => (
             <article key={service.title} className="border border-line bg-surface p-6">
               <h3 className="text-2xl font-semibold leading-tight">{service.title}</h3>
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <Signal label="Problem" value={service.problem} />
-                <Signal label="Method" value={service.method} />
-                <Signal label="Deliverable" value={service.deliverable} />
+                <Signal label="Economic consequence avoided" value={service.consequence} />
+                <Signal label="Methodology" value={service.method} />
+                <Signal label="Artifact / output" value={service.deliverable} />
               </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export const AdvisoryServices = CapabilityMatrix;
+
+export function OperatingModel() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Operating model"
+          title="A structured delivery path for ambiguous economic systems."
+          copy="The process keeps analysis tied to decisions: diagnose the pressure surface, model what matters, architect the response, and translate outputs for review."
+        />
+        <div className="mt-10 grid gap-4">
+          {operatingModel.map((step) => (
+            <article
+              key={step.phase}
+              className="grid gap-5 border border-line bg-background p-5 md:grid-cols-[0.16fr_0.84fr]"
+            >
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                  {step.phase}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold leading-tight">{step.title}</h3>
+              </div>
+              <div className="grid gap-4 md:grid-cols-4">
+                <Signal label="Input" value={step.input} />
+                <Signal label="Mechanism" value={step.mechanism} />
+                <Signal label="Output" value={step.output} />
+                <Signal label="Uncertainty reduction" value={step.reduction} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ValidationInfrastructure() {
+  return (
+    <section className="border-b border-line bg-surface-muted/45">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Validation infrastructure"
+          title="Decision support before mechanism commitments harden."
+          copy="Simulation, adversarial testing, scenario analysis, and sensitivity analysis are used only where they improve decisions and expose material risk."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {validationInfrastructure.map((item, index) => (
+            <ProgressivePanel
+              key={item.title}
+              index={`0${index + 1}`}
+              title={item.title}
+              summary={item.consequence}
+              consequence={item.artifact}
+              actionLabel="Inspect method"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Signal label="Method" value={item.method} />
+                <Signal label="Tool reference" value={item.tools} />
+              </div>
+            </ProgressivePanel>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ResearchObservatory() {
+  return (
+    <section className="border-b border-line">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Research / Observatory"
+          title="Research is kept useful by connecting it to delivery artifacts."
+          copy="The observatory layer bridges public essays, repositories, and practical outputs so visitors can inspect how thinking becomes infrastructure."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {observatoryHighlights.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="border border-line bg-surface p-5 no-underline transition-colors hover:border-accent"
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {item.label}
+              </p>
+              <h3 className="mt-6 text-2xl font-semibold leading-tight">{item.title}</h3>
+              <p className="mt-4 text-sm leading-6 text-muted">{item.description}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function StructuredEngagementPath() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Structured engagement path"
+          title="Clear scope before deep work."
+          copy="Engagements are framed around what uncertainty needs to be reduced, what artifact would change a decision, and what cadence the system requires."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {scopeAnchors.map((scope) => (
+            <article key={scope.title} className="border border-line bg-background p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                {scope.duration}
+              </p>
+              <h3 className="mt-5 text-2xl font-semibold leading-tight">{scope.title}</h3>
+              <p className="mt-4 text-sm leading-6 text-muted">{scope.description}</p>
             </article>
           ))}
         </div>

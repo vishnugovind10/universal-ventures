@@ -16,7 +16,7 @@ export default function SystemsPage() {
       <PageHeader
         eyebrow="Systems"
         title="Four categories. One evidence-backed operating model."
-        lede="Each system category is scoped around a problem, method, output, and example artifact so a visitor can see how advisory work becomes usable evidence."
+        lede="Each category translates a system concept into economic consequence, method, output, and artifact so delivery capability is visible."
       />
 
       <section className="border-b border-line">
@@ -50,6 +50,7 @@ export default function SystemsPage() {
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   <Signal label="Problem" value={category.problem} />
+                  <Signal label="Economic consequence" value={category.consequence} />
                   <Signal label="Method" value={category.method} />
                   <Signal label="Output" value={category.output} />
                   <Signal label="Example artifact" value={category.artifact} />

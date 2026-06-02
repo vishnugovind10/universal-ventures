@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="border-b border-line/70 bg-surface-muted/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2 md:px-10 lg:px-16">
           <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-subtle">
-            Economic systems architecture
+            Economic Systems Advisory & Infrastructure
           </p>
           <Link
             href="/contact"
@@ -28,7 +28,7 @@ export function SiteHeader() {
               {siteConfig.name}
             </span>
             <span className="mt-2 block font-mono text-xs text-subtle">
-              Infrastructure practice
+              Economic infrastructure practice
             </span>
           </span>
         </Link>

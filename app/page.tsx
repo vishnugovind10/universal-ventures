@@ -1,13 +1,17 @@
 import Link from "next/link";
 import {
-  AdvisoryServices,
-  EvidenceStrip,
+  ArtifactInfrastructure,
+  CapabilityMatrix,
   FinalCta,
-  SelectedArtifacts,
-  SelectedWork,
+  OperatingModel,
+  ProblemSpace,
+  ResearchObservatory,
+  StructuredEngagementPath,
+  TrustLayer,
+  ValidationInfrastructure,
 } from "@/components/evidence-sections";
 import { HeroSystemMap } from "@/components/system-visuals";
-import { positioning } from "@/lib/content-model";
+import { heroBrief, positioning } from "@/lib/content-model";
 
 export default function Home() {
   return (
@@ -24,6 +28,17 @@ export default function Home() {
             <p className="mt-8 max-w-2xl text-xl leading-8 text-muted md:text-2xl md:leading-9">
               {positioning.subheadline}
             </p>
+
+            <div className="mt-8 grid gap-3">
+              {heroBrief.map((item) => (
+                <div key={item.label} className="grid gap-2 border-t border-line pt-3 sm:grid-cols-[5rem_1fr]">
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                    {item.label}
+                  </p>
+                  <p className="text-sm leading-6 text-muted">{item.value}</p>
+                </div>
+              ))}
+            </div>
 
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               {positioning.trustStrip.map((item) => (
@@ -50,10 +65,14 @@ export default function Home() {
         </div>
       </section>
 
-      <EvidenceStrip />
-      <SelectedWork />
-      <SelectedArtifacts />
-      <AdvisoryServices />
+      <TrustLayer />
+      <ProblemSpace />
+      <CapabilityMatrix />
+      <OperatingModel />
+      <ValidationInfrastructure />
+      <ArtifactInfrastructure />
+      <ResearchObservatory />
+      <StructuredEngagementPath />
       <FinalCta />
     </>
   );

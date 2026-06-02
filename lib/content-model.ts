@@ -1,16 +1,31 @@
 export const positioning = {
-  headline: "Economic systems that hold up under market pressure.",
+  headline: "Cryptoeconomic infrastructure for systems that need to hold under pressure.",
   subheadline:
-    "Universal Ventures is an independent economic systems advisory and infrastructure practice for token economics, market structure, governance, liquidity coordination, and institutional translation.",
+    "Universal Ventures designs economic architecture, coordination systems, market structure, and validation artifacts for protocol teams, infrastructure teams, institutional ecosystems, and complex coordination systems.",
   shortDescription:
     "Evidence-backed economic systems advisory and infrastructure.",
   trustStrip: [
-    "11 public repositories",
-    "4+ systems essays",
-    "Trading and simulation artifacts",
-    "7 covered domains",
+    "Cryptoeconomic infrastructure",
+    "Coordination systems",
+    "Market structure",
+    "Economic architecture",
   ],
 };
+
+export const heroBrief = [
+  {
+    label: "What",
+    value: "Economic architecture, coordination systems, market structure, and validation artifacts.",
+  },
+  {
+    label: "Who",
+    value: "Protocol teams, infrastructure teams, institutional ecosystems, and complex coordination systems.",
+  },
+  {
+    label: "Why",
+    value: "Reduce structural risk, identify failure modes, and improve coordination durability.",
+  },
+];
 
 export const intersections = [
   "Incentive systems",
@@ -135,6 +150,51 @@ export const evidenceMetrics = [
   },
 ];
 
+export const trustSignals = [
+  "Public implementation artifacts, not only written positioning.",
+  "Research connected to execution, market infrastructure, and coordination design.",
+  "Artifacts designed to reduce uncertainty before governance or capital decisions harden.",
+];
+
+export const problemSpace = [
+  {
+    title: "Capital inefficiency",
+    consequence: "Incentives fund activity that does not become durable participation.",
+    mechanism: "Reward routing, emissions pressure, and participant exit behavior.",
+    artifact: "Incentive map and sensitivity table.",
+  },
+  {
+    title: "Treasury depletion",
+    consequence: "Runway, liquidity support, and market confidence become reflexively linked.",
+    mechanism: "Reserve policy, emissions, unlocks, and drawdown scenarios.",
+    artifact: "Treasury scenario matrix.",
+  },
+  {
+    title: "Governance capture",
+    consequence: "Control concentrates faster than legitimacy or response capacity can adapt.",
+    mechanism: "Delegation inertia, liquid voting power, veto rights, and escalation paths.",
+    artifact: "Governance tree and decision-rights map.",
+  },
+  {
+    title: "Liquidity fragility",
+    consequence: "Depth disappears when incentives change or volatility arrives.",
+    mechanism: "Routing leakage, market-maker dependence, spread quality, and rented capital.",
+    artifact: "Liquidity routing diagram.",
+  },
+  {
+    title: "Exploit surfaces",
+    consequence: "Mechanism complexity creates pathways for actors to extract value from design gaps.",
+    mechanism: "Adversarial testing, stress cases, and failure-mode review.",
+    artifact: "Failure-mode register.",
+  },
+  {
+    title: "Coordination breakdown",
+    consequence: "Teams lose response capacity as participants optimize locally.",
+    mechanism: "Authority boundaries, shared constraints, and coordination cadence.",
+    artifact: "Operating model and escalation map.",
+  },
+];
+
 export const selectedWork = [
   {
     context: "Protocol economics review",
@@ -232,26 +292,117 @@ export const advisoryServices = [
   {
     title: "Economic Architecture",
     problem: "Token, treasury, and incentive systems are often designed in separate documents.",
+    consequence: "Capital allocation becomes harder to govern when value flows and constraints drift apart.",
     method: "Map value flows, constraints, emissions, participant behavior, and stress scenarios together.",
     deliverable: "Economic architecture memo, incentive map, and scenario matrix.",
   },
   {
     title: "Coordination Systems",
     problem: "Governance can look decentralized while decisions remain slow or ambiguous.",
+    consequence: "Response latency creates capture risk, operating delays, and weaker legitimacy under stress.",
     method: "Define decision rights, escalation paths, delegation logic, and intervention constraints.",
     deliverable: "Governance tree, coordination model, and operating rules.",
   },
   {
     title: "Market Infrastructure",
     problem: "Liquidity can appear healthy while routing, depth quality, and funding exposure remain weak.",
+    consequence: "Capital becomes expensive, extractive, or unreliable when market structure is treated as external plumbing.",
     method: "Review market structure, execution surfaces, market-maker assumptions, and liquidity incentives.",
     deliverable: "Liquidity routing diagram, market-risk notes, and implementation priorities.",
   },
   {
     title: "Institutional Translation",
     problem: "Serious partners need risk, controls, obligations, and operating logic made legible.",
+    consequence: "Adoption slows when economic design cannot be reviewed, challenged, or explained by non-native stakeholders.",
     method: "Translate crypto-native systems into diligence-ready constraints and decision surfaces.",
     deliverable: "Institutional briefing, risk map, and engagement-ready architecture summary.",
+  },
+];
+
+export const operatingModel = [
+  {
+    phase: "01",
+    title: "Diagnose",
+    input: "System documentation, token flows, governance process, liquidity programs, and operating constraints.",
+    mechanism: "Map actors, incentives, decision rights, treasury exposure, and market structure dependencies.",
+    output: "Pressure map and initial failure-mode register.",
+    reduction: "Clarifies what must be solved before proposing mechanisms.",
+  },
+  {
+    phase: "02",
+    title: "Model",
+    input: "Failure modes, economic assumptions, actor behavior, and available data.",
+    mechanism: "Run scenario analysis, sensitivity checks, adversarial cases, and mechanism comparisons.",
+    output: "Scenario matrix, sensitivity table, and design tradeoff memo.",
+    reduction: "Shows which variables materially affect survivability.",
+  },
+  {
+    phase: "03",
+    title: "Architect",
+    input: "Validated constraints, governance needs, market realities, and implementation limits.",
+    mechanism: "Convert tradeoffs into token, treasury, governance, liquidity, and coordination design choices.",
+    output: "Architecture memo, operating model, artifact pack, and implementation priorities.",
+    reduction: "Turns ambiguity into decisions teams can review and execute.",
+  },
+  {
+    phase: "04",
+    title: "Translate",
+    input: "Architecture decisions, residual risks, assumptions, and operating responsibilities.",
+    mechanism: "Convert system logic into stakeholder-ready artifacts and review surfaces.",
+    output: "Evidence pack, risk summary, and engagement-ready briefing.",
+    reduction: "Improves internal alignment and external diligence readability.",
+  },
+];
+
+export const validationInfrastructure = [
+  {
+    title: "Simulation workflows",
+    consequence: "Model how treasury, incentives, liquidity, and governance assumptions behave across states.",
+    method: "Scenario runs, state transitions, threshold checks, and parameter comparison.",
+    tools: "cadCAD or TokenSPICE when simulation scope requires formal modeling.",
+    artifact: "Simulation output and parameter log.",
+  },
+  {
+    title: "Adversarial testing",
+    consequence: "Expose how rational actors extract, hedge, capture, route around, or abandon a mechanism.",
+    method: "Actor strategy mapping, attack surfaces, incentive leakage review, and failure-mode tests.",
+    tools: "Machinations where mechanism loops need fast interactive stress testing.",
+    artifact: "Failure-mode register and mitigation map.",
+  },
+  {
+    title: "Scenario analysis",
+    consequence: "Evaluate decisions under volatility, unlocks, emissions changes, liquidity shocks, and governance delay.",
+    method: "Base, stress, drawdown, and recovery cases with explicit assumptions.",
+    tools: "Spreadsheet models or lightweight code when formal simulation would add noise.",
+    artifact: "Treasury and liquidity scenario matrix.",
+  },
+  {
+    title: "Sensitivity analysis",
+    consequence: "Identify the variables that create nonlinear risk or strategic loss of control.",
+    method: "Parameter sweeps across rewards, runway, depth, concentration, and participation quality.",
+    tools: "Code notebooks or structured tables depending on evidence needs.",
+    artifact: "Sensitivity table and decision threshold summary.",
+  },
+];
+
+export const observatoryHighlights = [
+  {
+    label: "Research",
+    title: "System theses",
+    description: "Published analysis connects finality, routing, agents, tokenization, and market-making to economic design choices.",
+    href: "/research",
+  },
+  {
+    label: "Systems",
+    title: "Implementation evidence",
+    description: "Repositories show execution logic, funding analytics, market-making systems, and coordination observatory work.",
+    href: "/research",
+  },
+  {
+    label: "Artifacts",
+    title: "Reviewable outputs",
+    description: "Maps, matrices, simulations, and evidence packs make system design auditable before deployment.",
+    href: "/systems",
   },
 ];
 
@@ -259,6 +410,7 @@ export const systemsCategories = [
   {
     title: "Economic Architecture",
     problem: "Token, treasury, emissions, and liquidity assumptions drift apart.",
+    consequence: "Capital inefficiency and treasury depletion increase when economic assumptions are not reviewed as one system.",
     method: "Build one model for value flows, participant behavior, and stress conditions.",
     output: "Architecture memo and treasury scenario matrix.",
     artifact: "Token / economic modeling system",
@@ -266,6 +418,7 @@ export const systemsCategories = [
   {
     title: "Coordination Systems",
     problem: "Governance bottlenecks slow response when market conditions change.",
+    consequence: "Governance capture and coordination breakdown become more likely when authority and escalation paths are unclear.",
     method: "Clarify authority, escalation paths, delegated rights, and review cadence.",
     output: "Governance tree and coordination operating model.",
     artifact: "Decision-rights map",
@@ -273,6 +426,7 @@ export const systemsCategories = [
   {
     title: "Market Infrastructure",
     problem: "Liquidity programs can subsidize volume without improving durable market quality.",
+    consequence: "Liquidity fragility increases when capital is rented without improving routing, depth quality, or control.",
     method: "Analyze routing, spread, inventory risk, funding rates, and market-maker incentives.",
     output: "Liquidity routing diagram and execution-risk review.",
     artifact: "TWAP, market-making, and funding analytics systems",
@@ -280,6 +434,7 @@ export const systemsCategories = [
   {
     title: "Institutional Translation",
     problem: "Strong systems lose trust when risk and control surfaces are hard to evaluate.",
+    consequence: "Institutional ecosystems move slower when infrastructure cannot be reviewed, explained, or governed.",
     method: "Convert design logic into diligence language, controls, assumptions, and operating constraints.",
     output: "Institutional readiness brief and evidence pack.",
     artifact: "Risk and controls summary",

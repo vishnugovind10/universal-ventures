@@ -70,12 +70,14 @@ body {
   color: var(--foreground);
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   text-rendering: geometricPrecision;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
 }
 
 button,
@@ -83,6 +85,19 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+svg {
+  max-width: 100%;
 }
 
 ::selection {
