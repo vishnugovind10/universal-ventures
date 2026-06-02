@@ -1,14 +1,14 @@
 export const positioning = {
-  headline: "Economic Infrastructure for Emerging Digital Economies",
+  headline: "Economic systems that hold up under market pressure.",
   subheadline:
-    "Universal Ventures helps protocols, DAOs, digital asset networks, and institutions design incentive, treasury, governance, liquidity, and coordination systems that remain functional under real market pressure.",
+    "Universal Ventures is an independent economic systems advisory and infrastructure practice for token economics, market structure, governance, liquidity coordination, and institutional translation.",
   shortDescription:
-    "Professional economic systems architecture for emerging digital economies.",
+    "Evidence-backed economic systems advisory and infrastructure.",
   trustStrip: [
-    "Protocol economics",
-    "Treasury systems",
-    "Governance architecture",
-    "Liquidity coordination",
+    "11 public repositories",
+    "4+ systems essays",
+    "Trading and simulation artifacts",
+    "7 covered domains",
   ],
 };
 
@@ -109,6 +109,272 @@ export const insightHighlights = [
     title: "Institutional adoption requires economic legibility.",
     summary:
       "Serious participants need to understand constraints, obligations, control rights, and risk before they can trust the system.",
+  },
+];
+
+export const evidenceMetrics = [
+  {
+    value: "11",
+    label: "public repositories",
+    detail: "GitHub evidence across execution, market analytics, trading tools, and coordination systems.",
+  },
+  {
+    value: "4+",
+    label: "published systems essays",
+    detail: "Medium and Coinmonks writing on finality, routing, market making, tokenization, and agentic economies.",
+  },
+  {
+    value: "4",
+    label: "implementation artifacts",
+    detail: "TWAP execution, market making, funding analytics, and coordination observatory work.",
+  },
+  {
+    value: "7",
+    label: "covered domains",
+    detail: "Token economics, incentives, treasury, governance, liquidity, market infrastructure, translation.",
+  },
+];
+
+export const selectedWork = [
+  {
+    context: "Protocol economics review",
+    problem: "Emissions and liquidity incentives were creating weak retention signals.",
+    evidence: "Scenario model, incentive map, and treasury runway sensitivity.",
+    outcome: "Clearer allocation logic and pressure-tested operating constraints.",
+  },
+  {
+    context: "Governance and coordination assessment",
+    problem: "Decision rights were too broad for fast response during market stress.",
+    evidence: "Governance tree, escalation map, and intervention-rights matrix.",
+    outcome: "Reduced decision ambiguity and clearer response paths.",
+  },
+  {
+    context: "Market infrastructure analysis",
+    problem: "Liquidity depth looked healthy while routing and capital quality were fragile.",
+    evidence: "Liquidity routing diagram and execution-quality review.",
+    outcome: "Separated useful market depth from rented or extractive liquidity.",
+  },
+];
+
+export const systemArtifacts = [
+  {
+    title: "TWAP Execution Infrastructure",
+    source: "GitHub: TWAPexecution",
+    href: "https://github.com/vishnugovind10/TWAPexecution",
+    visual: "twap",
+    problem: "Large orders can move markets when execution is not broken into disciplined time intervals.",
+    capability: "Implements a time-weighted execution logic using exchange price data and scheduled order slices.",
+    relevance: "Shows market microstructure fluency and the ability to translate execution theory into code.",
+  },
+  {
+    title: "Market Making Engine",
+    source: "GitHub: MarketMaking",
+    href: "https://github.com/vishnugovind10/MarketMaking",
+    visual: "market-making",
+    problem: "Protocols need liquidity systems that account for spread, inventory, P&L, and stop conditions.",
+    capability: "Demonstrates order-book analysis, bid-ask logic, P&L monitoring, and risk stop conditions.",
+    relevance: "Signals practical liquidity architecture experience beyond abstract token design.",
+  },
+  {
+    title: "Funding Analytics Infrastructure",
+    source: "GitHub: institutional-crypto-funding-analyzer",
+    href: "https://github.com/vishnugovind10/institutional-crypto-funding-analyzer",
+    visual: "funding",
+    problem: "Funding-rate exposure is hard to evaluate without exchange data, stress tests, and risk metrics.",
+    capability: "Models multi-exchange funding rates, backtests strategies, and includes risk-management views.",
+    relevance: "Connects market infrastructure, analytics, and institutional operating needs.",
+  },
+  {
+    title: "Token / Economic Modeling Systems",
+    source: "Conceptual advisory artifact",
+    href: "/systems",
+    visual: "token-model",
+    problem: "Token systems often separate emissions, treasury, liquidity, and governance assumptions.",
+    capability: "Uses incentive maps, treasury scenario matrices, governance trees, liquidity routing diagrams, simulation outputs, and economic system maps.",
+    relevance: "Makes economic design reviewable before implementation decisions harden.",
+  },
+];
+
+export const visualProofExamples = [
+  {
+    title: "Incentive map",
+    visual: "incentive-map",
+    description: "Shows how rewards, constraints, and participant behavior route through the system.",
+  },
+  {
+    title: "Treasury scenario matrix",
+    visual: "treasury-matrix",
+    description: "Compares runway, emissions, liquidity support, and reserve assumptions under stress.",
+  },
+  {
+    title: "Governance tree",
+    visual: "governance",
+    description: "Clarifies routine decisions, escalation paths, veto rights, and intervention logic.",
+  },
+  {
+    title: "Liquidity routing diagram",
+    visual: "liquidity",
+    description: "Separates productive depth, external routing, rented liquidity, and leakage paths.",
+  },
+  {
+    title: "Simulation output",
+    visual: "simulation-output",
+    description: "Turns pressure scenarios into visible states, thresholds, and operating signals.",
+  },
+  {
+    title: "Economic system map",
+    visual: "economic-map",
+    description: "Connects token flow, treasury policy, governance, liquidity, and participant incentives.",
+  },
+];
+
+export const advisoryServices = [
+  {
+    title: "Economic Architecture",
+    problem: "Token, treasury, and incentive systems are often designed in separate documents.",
+    method: "Map value flows, constraints, emissions, participant behavior, and stress scenarios together.",
+    deliverable: "Economic architecture memo, incentive map, and scenario matrix.",
+  },
+  {
+    title: "Coordination Systems",
+    problem: "Governance can look decentralized while decisions remain slow or ambiguous.",
+    method: "Define decision rights, escalation paths, delegation logic, and intervention constraints.",
+    deliverable: "Governance tree, coordination model, and operating rules.",
+  },
+  {
+    title: "Market Infrastructure",
+    problem: "Liquidity can appear healthy while routing, depth quality, and funding exposure remain weak.",
+    method: "Review market structure, execution surfaces, market-maker assumptions, and liquidity incentives.",
+    deliverable: "Liquidity routing diagram, market-risk notes, and implementation priorities.",
+  },
+  {
+    title: "Institutional Translation",
+    problem: "Serious partners need risk, controls, obligations, and operating logic made legible.",
+    method: "Translate crypto-native systems into diligence-ready constraints and decision surfaces.",
+    deliverable: "Institutional briefing, risk map, and engagement-ready architecture summary.",
+  },
+];
+
+export const systemsCategories = [
+  {
+    title: "Economic Architecture",
+    problem: "Token, treasury, emissions, and liquidity assumptions drift apart.",
+    method: "Build one model for value flows, participant behavior, and stress conditions.",
+    output: "Architecture memo and treasury scenario matrix.",
+    artifact: "Token / economic modeling system",
+  },
+  {
+    title: "Coordination Systems",
+    problem: "Governance bottlenecks slow response when market conditions change.",
+    method: "Clarify authority, escalation paths, delegated rights, and review cadence.",
+    output: "Governance tree and coordination operating model.",
+    artifact: "Decision-rights map",
+  },
+  {
+    title: "Market Infrastructure",
+    problem: "Liquidity programs can subsidize volume without improving durable market quality.",
+    method: "Analyze routing, spread, inventory risk, funding rates, and market-maker incentives.",
+    output: "Liquidity routing diagram and execution-risk review.",
+    artifact: "TWAP, market-making, and funding analytics systems",
+  },
+  {
+    title: "Institutional Translation",
+    problem: "Strong systems lose trust when risk and control surfaces are hard to evaluate.",
+    method: "Convert design logic into diligence language, controls, assumptions, and operating constraints.",
+    output: "Institutional readiness brief and evidence pack.",
+    artifact: "Risk and controls summary",
+  },
+];
+
+export const researchEvidence = [
+  {
+    title: "The Physics of Finality",
+    href: "https://medium.com/coinmonks/the-physics-of-finality-how-alpenglow-turns-geography-into-governance-d71405f756c8",
+    thesis: "High-speed finality turns geography, latency, and topology into economic variables.",
+    insight: "Infrastructure constraints can centralize practical coordination power even when governance remains formally distributed.",
+    relatedSystems: "Coordination Fabric; routing pressure; validator economics",
+  },
+  {
+    title: "The Rise of the Agentic Economy",
+    href: "https://medium.com/coinmonks/the-rise-of-the-agentic-economy-how-ai-agents-are-rewriting-the-rules-of-money-ee876d376452",
+    thesis: "Autonomous economic actors change how verification, incentives, and trust need to be designed.",
+    insight: "The cost of synthetic output can fall faster than the cost of verification, creating new incentive attacks.",
+    relatedSystems: "Incentive maps; verification economics; coordination systems",
+  },
+  {
+    title: "The Ghosts in the Machine",
+    href: "https://vishnugovind10.medium.com/the-ghosts-in-the-machine-what-market-making-taught-me-about-building-the-future-000dea5888da",
+    thesis: "Market-making infrastructure reveals hidden assumptions about human behavior and coordination.",
+    insight: "Execution code is not neutral plumbing; every parameter encodes a system preference.",
+    relatedSystems: "Market Making Engine; liquidity coordination; market infrastructure",
+  },
+  {
+    title: "The Tokenization Trade Thesis",
+    href: "https://vishnugovind10.medium.com/the-16-trillion-revolution-how-tokenization-is-rewriting-global-trade-6ddf9e48ad09",
+    thesis: "Tokenization only works when economic design, financing needs, and institutional usability align.",
+    insight: "The tokenomics problem is not issuance; it is building a sustainable economic system around the asset.",
+    relatedSystems: "Treasury scenarios; institutional translation; economic architecture",
+  },
+];
+
+export const repositoryEvidence = [
+  {
+    title: "institutional-crypto-funding-analyzer",
+    href: "https://github.com/vishnugovind10/institutional-crypto-funding-analyzer",
+    description: "Funding-rate analytics and backtesting infrastructure across major derivatives exchanges.",
+    capability: "Real-time data, backtesting, slippage, stress testing, VaR/CVaR, and reporting.",
+    proof: "Python package structure with config, data, docs, source modules, and tests.",
+    relevance: "Shows implementation depth around funding exposure and market-risk analytics.",
+  },
+  {
+    title: "MarketMaking",
+    href: "https://github.com/vishnugovind10/MarketMaking",
+    description: "Crypto market-making algorithm focused on order-book analysis and stop conditions.",
+    capability: "Bid-ask logic, inventory-aware monitoring, P&L tracking, and risk controls.",
+    proof: "Python implementation plus market-making flow diagrams.",
+    relevance: "Supports liquidity coordination and market infrastructure advisory work.",
+  },
+  {
+    title: "TWAPexecution",
+    href: "https://github.com/vishnugovind10/TWAPexecution",
+    description: "Algorithmic execution prototype for time-weighted average price order slicing.",
+    capability: "Scheduled execution, price-data integration, and market-impact reduction logic.",
+    proof: "Python TWAP script and implementation notes.",
+    relevance: "Connects market microstructure theory to executable trading infrastructure.",
+  },
+  {
+    title: "coordination-fabric",
+    href: "https://github.com/vishnugovind10/coordination-fabric",
+    description: "Deterministic infrastructure observatory for coordination under routing and congestion pressure.",
+    capability: "Scenario selection, pressure states, topology maps, operational metrics, and exportable snapshots.",
+    proof: "Next.js/TypeScript system with local simulation and coordination-engine modules.",
+    relevance: "Bridges research theses into visual systems interfaces and explainable artifacts.",
+  },
+];
+
+export const engagementReasons = [
+  "Emissions causing sell pressure",
+  "Governance bottlenecks",
+  "Liquidity inefficiencies",
+  "Treasury uncertainty",
+  "Validator misalignment",
+];
+
+export const scopeAnchors = [
+  {
+    title: "Assessment",
+    duration: "2-3 weeks",
+    description: "Evidence review, pressure map, risk surface, and prioritized recommendations.",
+  },
+  {
+    title: "Architecture Engagement",
+    duration: "4-8 weeks",
+    description: "System model, design constraints, artifact pack, and implementation-ready outputs.",
+  },
+  {
+    title: "Retainer Advisory",
+    duration: "Monthly cadence",
+    description: "Ongoing review, decision support, research translation, and architecture iteration.",
   },
 ];
 

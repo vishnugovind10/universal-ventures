@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
-import { socialLinks } from "@/lib/site";
-
-const collaborationModes = [
-  "System pressure mapping",
-  "Protocol design",
-  "Treasury architecture",
-  "Incentive restructuring",
-  "Coordination systems",
-  "Infrastructure strategy",
-];
+import { engagementReasons, scopeAnchors } from "@/lib/content-model";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,18 +14,20 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Let's discuss your system."
-        lede="For protocols, DAOs, digital asset networks, and institutions working through coordination, treasury, incentive, or market-structure pressure."
+        title="Discuss an engagement."
+        lede="Use this page when there is a concrete economic system question, not a generic networking request."
       />
 
       <section className="border-b border-line">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:px-10 md:py-20 lg:grid-cols-[0.34fr_0.66fr] lg:px-16">
-          <aside>
-            <p className="font-mono text-sm text-subtle">Inquiry</p>
+          <aside className="border border-line bg-surface p-6">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Typical reasons teams engage
+            </p>
             <div className="mt-8 grid gap-3">
-              {collaborationModes.map((mode) => (
-                <p key={mode} className="border-t border-line pt-3 text-sm text-muted">
-                  {mode}
+              {engagementReasons.map((reason) => (
+                <p key={reason} className="border-t border-line pt-3 text-sm text-muted">
+                  {reason}
                 </p>
               ))}
             </div>
@@ -43,36 +36,31 @@ export default function ContactPage() {
           <div className="grid gap-12">
             <div className="max-w-3xl">
               <p className="text-2xl leading-snug text-foreground">
-                Use the form for research-led conversations about systems under
-                pressure: incentives, treasury, governance, liquidity, and
-                coordination architecture.
+                Engagements are scoped around evidence: what is breaking, what is
+                uncertain, what can be modeled, and what artifact would help the
+                team make a better decision.
               </p>
               <p className="mt-5 text-base leading-7 text-muted">
-                Useful inquiries usually involve a concrete architecture question,
-                a failure pattern, or a system that needs clearer operating
-                constraints.
+                Share the system context, current concern, and whether the need is
+                assessment, architecture, or ongoing advisory cadence.
               </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {scopeAnchors.map((scope) => (
+                <article key={scope.title} className="border border-line bg-surface p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                    {scope.duration}
+                  </p>
+                  <h2 className="mt-5 text-xl font-semibold">{scope.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {scope.description}
+                  </p>
+                </article>
+              ))}
             </div>
 
             <ContactForm />
-
-            <div>
-              <p className="font-mono text-sm text-subtle">Reference channels</p>
-              <div className="mt-6 grid border-t border-line">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="grid gap-2 border-b border-line py-6 no-underline md:grid-cols-[0.26fr_0.74fr]"
-                  >
-                    <span className="font-mono text-xs text-subtle">{link.label}</span>
-                    <span className="break-words text-lg text-foreground">{link.href}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

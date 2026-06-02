@@ -303,13 +303,13 @@ export function StrategicEngagement() {
               href="/contact"
               className="inline-flex border border-foreground bg-foreground px-5 py-3 font-mono text-xs text-background no-underline transition-colors hover:bg-background hover:text-foreground"
             >
-              Discuss Your System
+              Discuss an engagement
             </Link>
             <Link
               href="/systems"
               className="inline-flex border border-line px-5 py-3 font-mono text-xs text-foreground no-underline transition-colors hover:border-line-strong"
             >
-              Explore System Domains
+              Review systems
             </Link>
           </div>
         </div>

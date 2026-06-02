@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { ProtocolFeedbackLoop } from "@/components/system-visuals";
 import { protocolLoop, thesisSections } from "@/lib/content-model";
@@ -29,8 +30,8 @@ export default function ThesisPage() {
           <div className="grid gap-10">
             <div className="max-w-3xl">
               <p className="text-2xl leading-snug text-foreground">
-                The hardest problem in Web3 is no longer execution. It is
-                survivable coordination.
+                The hardest problem is not writing a mechanism. It is proving
+                that the mechanism can survive contact with real behavior.
               </p>
               <p className="mt-6 text-base leading-7 text-muted">
                 Tokenized systems are adaptive economic environments. They do not
@@ -51,6 +52,15 @@ export default function ThesisPage() {
                   <p className="mt-4 text-sm leading-6 text-muted">{section.body}</p>
                 </section>
               ))}
+            </div>
+
+            <div className="border-t border-line pt-8">
+              <Link
+                href="/contact"
+                className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
+              >
+                Discuss an engagement
+              </Link>
             </div>
           </div>
         </div>

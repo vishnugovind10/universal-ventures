@@ -111,7 +111,7 @@ export function ContactForm() {
           disabled={!isConfigured || submitState === "submitting"}
           className="w-fit border border-line px-5 py-3 font-mono text-xs text-foreground transition-colors hover:border-line-strong disabled:cursor-not-allowed disabled:text-subtle disabled:hover:border-line"
         >
-          {submitState === "submitting" ? "Sending" : "Send inquiry"}
+          {submitState === "submitting" ? "Sending" : "Send engagement inquiry"}
         </button>
         {submitState === "error" ? (
           <p className="text-sm leading-6 text-muted" aria-live="polite">

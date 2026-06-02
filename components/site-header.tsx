@@ -14,7 +14,7 @@ export function SiteHeader() {
             href="/contact"
             className="hidden font-mono text-xs text-accent no-underline hover:text-accent-strong sm:inline"
           >
-            Connect with us
+            Discuss an engagement
           </Link>
         </div>
       </div>

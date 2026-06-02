@@ -1,8 +1,8 @@
 # Universal Ventures
 
-A minimal static website for Universal Ventures, built as an institutional research
-publication for economic infrastructure, protocol economies, and coordination
-systems.
+An evidence-backed website for Universal Ventures, built to validate an
+independent economic systems advisory and infrastructure practice for warm
+inbound visitors.
 
 ## Stack
 

@@ -1,29 +1,22 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import {
-  AudienceSegments,
-  CoreSystemDomains,
-  InteractiveSystemsLayer,
-  ProfessionalEcosystem,
-  ProfessionalSignalStrip,
-  StrategicEngagement,
-  WhatWeActuallyDo,
-  WhySystemsBreak,
-} from "@/components/home-sections";
+  AdvisoryServices,
+  EvidenceStrip,
+  FinalCta,
+  SelectedArtifacts,
+  SelectedWork,
+} from "@/components/evidence-sections";
 import { HeroSystemMap } from "@/components/system-visuals";
 import { positioning } from "@/lib/content-model";
-import { getAllResearchArticles } from "@/lib/research";
 
 export default function Home() {
-  const featuredResearch = getAllResearchArticles().slice(0, 3);
-
   return (
     <>
-      <section className="border-b border-line">
-        <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl gap-12 px-6 py-16 md:grid-cols-[0.88fr_1.12fr] md:items-center md:px-10 md:py-20 lg:px-16">
+      <section className="border-b border-line bg-surface-muted/45">
+        <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl gap-12 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-10 md:py-20 lg:px-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-              Universal Ventures
+              Economic Systems Advisory & Infrastructure
             </p>
             <h1 className="mt-8 max-w-4xl break-words text-4xl font-semibold leading-[0.95] tracking-tight min-[420px]:text-5xl sm:text-6xl md:text-7xl">
               {positioning.headline}
@@ -43,18 +36,12 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10">
               <Link
                 href="/contact"
                 className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
               >
-                Connect With Us
-              </Link>
-              <Link
-                href="/research"
-                className="inline-flex border border-line px-5 py-3 font-mono text-xs text-foreground no-underline transition-colors hover:border-line-strong"
-              >
-                View Research
+                Discuss an engagement
               </Link>
             </div>
           </div>
@@ -63,79 +50,11 @@ export default function Home() {
         </div>
       </section>
 
-      <ProfessionalSignalStrip />
-      <ProfessionalEcosystem />
-      <WhatWeActuallyDo />
-      <AudienceSegments />
-      <WhySystemsBreak />
-      <CoreSystemDomains />
-      <InteractiveSystemsLayer />
-
-      <section className="border-b border-line">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.34fr_0.66fr] lg:px-16">
-          <div>
-            <p className="font-mono text-sm text-subtle">Research / Observatory</p>
-            <h2 className="mt-8 max-w-md font-serif text-4xl font-medium leading-none md:text-5xl">
-              Systems analysis for coordination infrastructure.
-            </h2>
-          </div>
-          <div className="grid border-t border-line">
-            {featuredResearch.map((article) => {
-              const href = article.externalUrl ?? `/research/${article.slug}`;
-              const isExternal = Boolean(article.externalUrl);
-
-              return (
-                <LinkOrAnchor
-                  key={article.slug}
-                  href={href}
-                  external={isExternal}
-                  className="grid gap-3 border-b border-line py-6 no-underline md:grid-cols-[0.28fr_0.72fr]"
-                >
-                  <span className="font-mono text-xs text-subtle">
-                    {article.category}
-                  </span>
-                  <span>
-                    <span className="block font-serif text-2xl font-medium leading-tight">
-                      {article.title}
-                    </span>
-                    <span className="mt-3 block text-sm leading-6 text-muted">
-                      {article.summary}
-                    </span>
-                  </span>
-                </LinkOrAnchor>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <StrategicEngagement />
+      <EvidenceStrip />
+      <SelectedWork />
+      <SelectedArtifacts />
+      <AdvisoryServices />
+      <FinalCta />
     </>
-  );
-}
-
-function LinkOrAnchor({
-  href,
-  external,
-  className,
-  children,
-}: {
-  href: string;
-  external: boolean;
-  className: string;
-  children: ReactNode;
-}) {
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noreferrer" className={className}>
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <Link href={href} className={className}>
-      {children}
-    </Link>
   );
 }
