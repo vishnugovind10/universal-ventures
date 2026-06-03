@@ -1,7 +1,9 @@
 import Link from "next/link";
 import {
   ArtifactInfrastructure,
+  BuyerOutcomes,
   CapabilityMatrix,
+  EngagementFit,
   FinalCta,
   OperatingModel,
   ProblemSpace,
@@ -68,6 +70,8 @@ export default function Home() {
       <TrustLayer />
       <ProblemSpace />
       <CapabilityMatrix />
+      <BuyerOutcomes />
+      <EngagementFit />
       <OperatingModel />
       <ValidationInfrastructure />
       <ArtifactInfrastructure />

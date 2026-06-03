@@ -1,7 +1,7 @@
 export const positioning = {
-  headline: "Cryptoeconomic infrastructure for systems that need to hold under pressure.",
+  headline: "Economic infrastructure for token systems, governance, and liquidity under pressure.",
   subheadline:
-    "Universal Ventures designs economic architecture, coordination systems, market structure, and validation artifacts for protocol teams, infrastructure teams, institutional ecosystems, and complex coordination systems.",
+    "Universal Ventures helps protocol and infrastructure teams identify failure modes, design coordination systems, and produce decision-ready artifacts before incentives, treasury, governance, or liquidity break.",
   shortDescription:
     "Evidence-backed economic systems advisory and infrastructure.",
   trustStrip: [
@@ -15,15 +15,19 @@ export const positioning = {
 export const heroBrief = [
   {
     label: "What",
-    value: "Economic architecture, coordination systems, market structure, and validation artifacts.",
+    value: "Token economics, governance design, treasury architecture, liquidity coordination, and market-structure review.",
   },
   {
     label: "Who",
-    value: "Protocol teams, infrastructure teams, institutional ecosystems, and complex coordination systems.",
+    value: "Protocol teams, infrastructure teams, DAOs, institutional ecosystems, and complex digital economies.",
   },
   {
     label: "Why",
-    value: "Reduce structural risk, identify failure modes, and improve coordination durability.",
+    value: "Reduce structural risk, expose failure modes, and make economic decisions easier to defend.",
+  },
+  {
+    label: "Next",
+    value: "Bring a concrete system question. Leave with a scoped path, artifact requirements, and decision surface.",
   },
 ];
 
@@ -192,6 +196,52 @@ export const problemSpace = [
     consequence: "Teams lose response capacity as participants optimize locally.",
     mechanism: "Authority boundaries, shared constraints, and coordination cadence.",
     artifact: "Operating model and escalation map.",
+  },
+];
+
+export const buyerOutcomes = [
+  {
+    before: "Emissions, liquidity incentives, and treasury policy are being discussed separately.",
+    work: "Build a shared economic model across incentives, runway, market depth, and participant behavior.",
+    after: "The team can see which tradeoffs materially affect capital efficiency and survivability.",
+  },
+  {
+    before: "Governance looks active but hard decisions still bottleneck or fragment.",
+    work: "Map decision rights, escalation paths, delegation risks, and intervention constraints.",
+    after: "The system has clearer authority boundaries before volatility forces urgent coordination.",
+  },
+  {
+    before: "Liquidity appears healthy, but routing, quality, and dependency risk are unclear.",
+    work: "Review market structure, execution surfaces, funding exposure, and liquidity incentives.",
+    after: "The team can separate durable market quality from rented or extractive capital.",
+  },
+  {
+    before: "External stakeholders cannot evaluate the system without dense internal explanation.",
+    work: "Translate protocol-native assumptions into risk maps, controls, artifacts, and diligence language.",
+    after: "Institutional partners can review the economic logic without flattening the system.",
+  },
+];
+
+export const engagementFit = [
+  {
+    title: "A mechanism is about to become policy.",
+    description:
+      "Use the work before emissions, staking, treasury, liquidity, or governance changes become expensive to reverse.",
+  },
+  {
+    title: "Growth is increasing coordination risk.",
+    description:
+      "Use the work when more markets, validators, subnets, delegates, or partners are adding operating complexity.",
+  },
+  {
+    title: "The team needs a decision artifact.",
+    description:
+      "Use the work when internal alignment or external diligence needs a map, matrix, model, or evidence pack.",
+  },
+  {
+    title: "Failure modes are known but not structured.",
+    description:
+      "Use the work when risks are visible but the team needs them translated into priorities and constraints.",
   },
 ];
 

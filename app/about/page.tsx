@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
+import { buyerOutcomes } from "@/lib/content-model";
 
 const operatingSignals = [
   "Economic design review",
@@ -76,6 +77,19 @@ export default function AboutPage() {
                 >
                   {principle}
                 </p>
+              ))}
+            </div>
+
+            <div className="mt-10 grid gap-4">
+              {buyerOutcomes.slice(0, 2).map((outcome) => (
+                <section key={outcome.before} className="border-t border-line pt-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                    Delivery outcome
+                  </p>
+                  <p className="mt-3 text-base leading-7 text-foreground">
+                    {outcome.after}
+                  </p>
+                </section>
               ))}
             </div>
 

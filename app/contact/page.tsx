@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
-import { engagementReasons, scopeAnchors } from "@/lib/content-model";
+import { engagementFit, engagementReasons, scopeAnchors } from "@/lib/content-model";
 
 const intakeSignals = [
   "Current system context",
@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Discuss an engagement."
-        lede="Use this page when there is a concrete economic system question, not a generic networking request."
+        lede="Use this page when there is a concrete economic system question, a mechanism decision, or an artifact that would help a team reduce uncertainty."
       />
 
       <section className="border-b border-line">
@@ -58,6 +58,15 @@ export default function ContactPage() {
                 <p key={signal} className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
                   {signal}
                 </p>
+              ))}
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {engagementFit.slice(0, 2).map((item) => (
+                <article key={item.title} className="border border-line bg-surface p-5">
+                  <h2 className="text-xl font-semibold leading-tight">{item.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
+                </article>
               ))}
             </div>
 

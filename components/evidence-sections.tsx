@@ -3,7 +3,9 @@ import { ProgressivePanel } from "@/components/progressive-panel";
 import { ProofVisual } from "@/components/proof-visuals";
 import {
   advisoryServices,
+  buyerOutcomes,
   evidenceMetrics,
+  engagementFit,
   observatoryHighlights,
   operatingModel,
   problemSpace,
@@ -241,6 +243,59 @@ export function CapabilityMatrix() {
 }
 
 export const AdvisoryServices = CapabilityMatrix;
+
+export function BuyerOutcomes() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="What changes"
+          title="The value is not another theory. It is a clearer decision surface."
+          copy="Engagements are useful when they change what a team can decide, explain, govern, or safely implement."
+        />
+        <div className="mt-10 grid gap-4">
+          {buyerOutcomes.map((item, index) => (
+            <article
+              key={item.before}
+              className="grid gap-5 border border-line bg-background p-5 md:grid-cols-[0.14fr_0.86fr]"
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                Outcome 0{index + 1}
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <Signal label="Before" value={item.before} />
+                <Signal label="Work" value={item.work} />
+                <Signal label="After" value={item.after} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function EngagementFit() {
+  return (
+    <section className="border-b border-line bg-surface-muted/45">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
+        <SectionIntro
+          eyebrow="Why hire"
+          title="Engage when a system decision needs to survive scrutiny."
+          copy="The work is appropriate when the risk is structural, economic, or coordination-heavy enough that generic tokenomics advice is not sufficient."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {engagementFit.map((item) => (
+            <article key={item.title} className="border border-line bg-surface p-5">
+              <h3 className="text-2xl font-semibold leading-tight">{item.title}</h3>
+              <p className="mt-4 text-sm leading-6 text-muted">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function OperatingModel() {
   return (
