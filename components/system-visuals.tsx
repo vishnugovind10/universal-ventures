@@ -110,7 +110,7 @@ export function CoordinationBreakdownDiagram({ items }: { items: string[] }) {
               key={item}
               className="relative grid gap-3 border border-line bg-background p-4 md:grid-cols-[auto_1fr]"
             >
-              <span className="font-mono text-xs text-subtle">0{index + 1}</span>
+              <span className="font-mono text-xs text-subtle">{index + 1}</span>
               <p className="text-lg font-medium">{item}</p>
             </div>
           ))}
@@ -130,7 +130,7 @@ export function SolutionCardGrid({ items }: { items: SolutionArea[] }) {
         >
           <div className="flex items-start justify-between gap-4">
             <SystemIcon index={index} />
-            <span className="font-mono text-xs text-subtle">0{index + 1}</span>
+            <span className="font-mono text-xs text-subtle">{index + 1}</span>
           </div>
           <h3 className="mt-10 font-serif text-3xl font-medium leading-tight">
             {item.title}
@@ -172,7 +172,7 @@ export function FailureModeMap({
             key={item.title}
             className="border border-line bg-background p-4 transition-colors hover:border-line-strong"
           >
-            <p className="font-mono text-xs text-subtle">risk 0{index + 1}</p>
+            <p className="font-mono text-xs text-subtle">risk {index + 1}</p>
             <h4 className="mt-5 text-lg font-semibold">{item.title}</h4>
             <p className="mt-3 text-sm leading-6 text-muted">{item.consequence}</p>
           </article>
@@ -189,7 +189,7 @@ export function ProtocolFeedbackLoop({ steps }: { steps: LoopStep[] }) {
         {steps.map((step, index) => (
           <article key={step.title} className="relative border border-line bg-background p-4">
             <div className="mb-8 flex items-center justify-between gap-4">
-              <p className="font-mono text-xs text-subtle">0{index + 1}</p>
+              <p className="font-mono text-xs text-subtle">{index + 1}</p>
               <span className="h-px flex-1 bg-line" />
             </div>
             <h3 className="text-lg font-semibold">{step.title}</h3>
@@ -212,7 +212,7 @@ export function VisualCaseStudyGrid({ items }: { items: VisualCaseStudy[] }) {
           <div className="grid gap-6 md:grid-cols-[0.42fr_0.58fr]">
             <MiniCaseDiagram index={index} />
             <div>
-              <p className="font-mono text-xs text-subtle">system example 0{index + 1}</p>
+              <p className="font-mono text-xs text-subtle">system example {index + 1}</p>
               <h3 className="mt-4 font-serif text-3xl font-medium leading-tight">
                 {item.title}
               </h3>
@@ -232,7 +232,7 @@ export function PrincipleRail({ items }: { items: Principle[] }) {
     <div className="grid gap-4 lg:grid-cols-5">
       {items.map((item, index) => (
         <article key={item.title} className="border-t border-line pt-5">
-          <p className="font-mono text-xs text-subtle">0{index + 1}</p>
+          <p className="font-mono text-xs text-subtle">{index + 1}</p>
           <h3 className="mt-6 text-xl font-semibold leading-snug">{item.title}</h3>
           <p className="mt-4 text-sm leading-6 text-muted">{item.description}</p>
         </article>

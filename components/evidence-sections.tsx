@@ -8,14 +8,117 @@ import {
   engagementFit,
   observatoryHighlights,
   operatingModel,
+  problemOutcomeCards,
   problemSpace,
+  proofObjects,
   selectedWork,
   scopeAnchors,
   systemArtifacts,
   trustSignals,
   validationInfrastructure,
   visualProofExamples,
+  whySystemsBreak,
 } from "@/lib/content-model";
+
+export function WhatActuallyDo() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-16 lg:px-16">
+        <div className="grid gap-8 lg:grid-cols-[0.32fr_0.68fr]">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              What we actually do
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl">
+              We help teams turn economic ambiguity into usable system decisions.
+            </h2>
+            <p className="mt-5 text-sm leading-6 text-muted">
+              The work produces maps, matrices, mechanism reviews, simulations,
+              and operating constraints for token, treasury, governance, liquidity,
+              and coordination problems.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {problemOutcomeCards.map((card) => (
+              <ProgressivePanel
+                key={card.problem}
+                title={`${card.problem} -> ${card.outcome}`}
+                summary={card.summary}
+                consequence={card.consequence}
+                actionLabel={card.action}
+              >
+                <p>{card.detail}</p>
+              </ProgressivePanel>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-4 border-t border-line pt-8 md:grid-cols-4">
+          {evidenceMetrics.map((metric) => (
+            <article key={metric.label} className="border-l border-line pl-5">
+              <p className="text-3xl font-semibold leading-none text-foreground">
+                {metric.value}
+              </p>
+              <h3 className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {metric.label}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-muted">{metric.detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-4 border-t border-line pt-8 md:grid-cols-3">
+          {proofObjects.map((object) => (
+            <article key={object.title} className="border border-line bg-background p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {object.type}
+              </p>
+              <h3 className="mt-5 text-2xl font-semibold leading-tight">{object.title}</h3>
+              <Signal label="Problem" value={object.problem} />
+              <Signal label="Output" value={object.output} />
+              <Link
+                href={object.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex font-mono text-xs text-accent no-underline hover:text-accent-strong"
+              >
+                View proof object
+              </Link>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function WhySystemsBreak() {
+  return (
+    <section className="border-b border-line bg-surface-muted/45">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20 lg:px-16">
+        <SectionIntro
+          eyebrow="Why systems break"
+          title="Most token systems do not collapse from one bad assumption. They collapse from feedback."
+          copy="The visible symptom is price, liquidity, governance, or growth. The underlying issue is usually a system that rewards behavior it cannot retain."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {whySystemsBreak.map((item) => (
+            <ProgressivePanel
+              key={item.title}
+              title={item.title}
+              summary={item.summary}
+              consequence={item.consequence}
+              actionLabel={item.action}
+            >
+              <p>{item.detail}</p>
+            </ProgressivePanel>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function TrustLayer() {
   return (
@@ -54,14 +157,22 @@ export function TrustLayer() {
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {selectedWork.map((work) => (
-            <article key={work.context} className="border border-line bg-background p-5">
+          {proofObjects.map((object) => (
+            <article key={object.title} className="border border-line bg-background p-5">
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-                {work.context}
+                {object.type}
               </p>
-              <Signal label="Problem" value={work.problem} />
-              <Signal label="Artifact evidence" value={work.evidence} />
-              <Signal label="Uncertainty reduced" value={work.outcome} />
+              <h3 className="mt-5 text-2xl font-semibold leading-tight">{object.title}</h3>
+              <Signal label="Problem" value={object.problem} />
+              <Signal label="Output" value={object.output} />
+              <Link
+                href={object.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex font-mono text-xs text-accent no-underline hover:text-accent-strong"
+              >
+                View proof object
+              </Link>
             </article>
           ))}
         </div>
@@ -260,7 +371,7 @@ export function BuyerOutcomes() {
               className="grid gap-5 border border-line bg-background p-5 md:grid-cols-[0.14fr_0.86fr]"
             >
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-                Outcome 0{index + 1}
+                Outcome {index + 1}
               </p>
               <div className="grid gap-4 md:grid-cols-3">
                 <Signal label="Before" value={item.before} />
@@ -407,6 +518,11 @@ export function StructuredEngagementPath() {
               <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
                 {scope.duration}
               </p>
+              {"pricing" in scope ? (
+                <p className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                  {scope.pricing}
+                </p>
+              ) : null}
               <h3 className="mt-5 text-2xl font-semibold leading-tight">{scope.title}</h3>
               <p className="mt-4 text-sm leading-6 text-muted">{scope.description}</p>
             </article>
@@ -426,18 +542,19 @@ export function FinalCta() {
             Engagement initiation
           </p>
           <h2 className="mt-6 max-w-3xl text-4xl font-semibold leading-none tracking-tight md:text-5xl">
-            Bring a system question, not a polished brief.
+            Bring a system constraint, not a polished brief.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-inverse-foreground/70">
-            Useful conversations usually start with a constraint: emissions,
-            liquidity, governance, treasury, validators, or market structure.
+            Useful conversations can start with a precise mechanism problem or
+            a weaker signal: emissions pressure, liquidity fragility, governance
+            delay, treasury exposure, validators, or market structure.
           </p>
         </div>
         <Link
           href="/contact"
           className="w-fit border border-inverse-foreground bg-inverse-foreground px-5 py-3 font-mono text-xs text-inverse no-underline transition-colors hover:bg-transparent hover:text-inverse-foreground"
         >
-          Discuss an engagement
+          Discuss a system problem
         </Link>
       </div>
     </section>

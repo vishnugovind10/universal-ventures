@@ -8,8 +8,8 @@ export function SiteFooter() {
         <div>
           <p className="text-2xl font-semibold">{siteConfig.name}</p>
           <p className="mt-3 max-w-md text-sm leading-6 text-inverse-foreground/70">
-            Evidence-backed economic systems advisory and infrastructure for
-            emerging digital economies.
+            Economic architecture for token, treasury, governance, liquidity,
+            and coordination systems operating under pressure.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">

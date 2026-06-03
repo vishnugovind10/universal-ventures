@@ -1,21 +1,21 @@
 export const positioning = {
-  headline: "Economic infrastructure for token systems, governance, and liquidity under pressure.",
+  headline: "Economic architecture for digital asset systems operating under real constraints.",
   subheadline:
-    "Universal Ventures helps protocol and infrastructure teams identify failure modes, design coordination systems, and produce decision-ready artifacts before incentives, treasury, governance, or liquidity break.",
+    "We design token economies, coordination systems, treasury structures, and market mechanisms for protocols and digital asset networks that must survive adversarial conditions.",
   shortDescription:
-    "Evidence-backed economic systems advisory and infrastructure.",
+    "Economic systems advisory and infrastructure for emerging digital economies.",
   trustStrip: [
-    "Cryptoeconomic infrastructure",
-    "Coordination systems",
-    "Market structure",
-    "Economic architecture",
+    "Token economies",
+    "Treasury systems",
+    "Governance architecture",
+    "Market mechanisms",
   ],
 };
 
 export const heroBrief = [
   {
     label: "What",
-    value: "Token economics, governance design, treasury architecture, liquidity coordination, and market-structure review.",
+    value: "Token, treasury, governance, liquidity, and coordination systems designed around real market behavior.",
   },
   {
     label: "Who",
@@ -23,11 +23,11 @@ export const heroBrief = [
   },
   {
     label: "Why",
-    value: "Reduce structural risk, expose failure modes, and make economic decisions easier to defend.",
+    value: "Keep economic systems functional when growth, volatility, adversarial behavior, and institutional scrutiny arrive.",
   },
   {
     label: "Next",
-    value: "Bring a concrete system question. Leave with a scoped path, artifact requirements, and decision surface.",
+    value: "Start with a system problem. Leave with a scoped path, artifact requirements, and decision surface.",
   },
 ];
 
@@ -133,9 +133,9 @@ export const insightHighlights = [
 
 export const evidenceMetrics = [
   {
-    value: "11",
-    label: "public repositories",
-    detail: "GitHub evidence across execution, market analytics, trading tools, and coordination systems.",
+    value: "4",
+    label: "curated repositories",
+    detail: "Public implementation artifacts across execution, funding analytics, market making, and coordination systems.",
   },
   {
     value: "4+",
@@ -144,13 +144,13 @@ export const evidenceMetrics = [
   },
   {
     value: "4",
-    label: "implementation artifacts",
-    detail: "TWAP execution, market making, funding analytics, and coordination observatory work.",
+    label: "mechanism frameworks",
+    detail: "Tokenomics stress maps, treasury matrices, governance trees, and liquidity routing diagrams.",
   },
   {
-    value: "7",
-    label: "covered domains",
-    detail: "Token economics, incentives, treasury, governance, liquidity, market infrastructure, translation.",
+    value: "3",
+    label: "engagement modes",
+    detail: "Assessment, architecture engagement, and embedded advisory support.",
   },
 ];
 
@@ -158,6 +158,33 @@ export const trustSignals = [
   "Public implementation artifacts, not only written positioning.",
   "Research connected to execution, market infrastructure, and coordination design.",
   "Artifacts designed to reduce uncertainty before governance or capital decisions harden.",
+];
+
+export const proofObjects = [
+  {
+    title: "Tokenomics Stress Map",
+    type: "Framework",
+    source: "WordPress research system",
+    href: "https://universalventures9.wordpress.com/framework-library/",
+    problem: "Token systems can look aligned while incentives, liquidity, and treasury pressure quietly diverge.",
+    output: "Failure-mode map for pressure-testing economic design before commitments harden.",
+  },
+  {
+    title: "Temporal Liquidity Risk Simulation",
+    type: "Simulation",
+    source: "WordPress artifacts library",
+    href: "https://universalventures9.wordpress.com/artifacts/",
+    problem: "Liquidity can disappear exactly when a system needs response capacity.",
+    output: "Scenario surface for understanding timing, drawdown, and liquidity fragility.",
+  },
+  {
+    title: "Infrastructure Constraints at Scale",
+    type: "Research object",
+    source: "Research domains",
+    href: "https://universalventures9.wordpress.com/topic-hubs/",
+    problem: "Throughput, routing, latency, and topology become economic variables as systems scale.",
+    output: "Domain map connecting infrastructure limits to governance and market-structure decisions.",
+  },
 ];
 
 export const problemSpace = [
@@ -437,9 +464,9 @@ export const validationInfrastructure = [
 
 export const observatoryHighlights = [
   {
-    label: "Research",
-    title: "System theses",
-    description: "Published analysis connects finality, routing, agents, tokenization, and market-making to economic design choices.",
+    label: "Research objects",
+    title: "System theses with outputs",
+    description: "Published analysis is framed as decision support: thesis, system implication, and artifact path.",
     href: "/research",
   },
   {
@@ -558,28 +585,133 @@ export const repositoryEvidence = [
 ];
 
 export const engagementReasons = [
-  "Emissions causing sell pressure",
-  "Governance bottlenecks",
-  "Liquidity inefficiencies",
-  "Treasury uncertainty",
-  "Validator misalignment",
+  "Emissions are creating sell pressure or weak retention.",
+  "Governance is too slow for decisions that matter.",
+  "Liquidity looks healthy but quality, routing, or dependency risk is unclear.",
+  "Treasury policy, runway, and market confidence are becoming reflexive.",
+  "Validator, subnet, delegate, or ecosystem incentives are drifting.",
 ];
 
 export const scopeAnchors = [
   {
     title: "Assessment",
     duration: "2-3 weeks",
+    pricing: "Starts EUR 2-5k",
     description: "Evidence review, pressure map, risk surface, and prioritized recommendations.",
   },
   {
     title: "Architecture Engagement",
     duration: "4-8 weeks",
+    pricing: "Typically EUR 5-20k+",
     description: "System model, design constraints, artifact pack, and implementation-ready outputs.",
   },
   {
     title: "Retainer Advisory",
     duration: "Monthly cadence",
+    pricing: "Scoped",
     description: "Ongoing review, decision support, research translation, and architecture iteration.",
+  },
+];
+
+export const founderProfile = {
+  name: "Vishnu Govind",
+  role: "Founder, Universal Ventures",
+  focus:
+    "Strategic systems architecture for digital asset systems, cryptoeconomic design, market structure, distributed coordination, and mechanism engineering.",
+  why:
+    "Universal Ventures exists to bridge theory and implementation: turning token, treasury, governance, liquidity, and infrastructure complexity into artifacts teams can review, stress-test, and operate.",
+};
+
+export const workingPrinciples = [
+  "Constraint-first",
+  "Artifact-led",
+  "Research-driven",
+  "Adversarial thinking",
+  "Implementation-oriented",
+];
+
+export const researchObjectFilters = [
+  "Tokenomics",
+  "Treasury",
+  "Governance",
+  "Market Design",
+  "Coordination",
+  "Simulation",
+  "Infrastructure",
+];
+
+export const researchObjects = [
+  {
+    title: "Tokenomics Stress Map",
+    href: "https://universalventures9.wordpress.com/framework-library/",
+    type: "Framework",
+    domain: "Tokenomics",
+    problem: "Identify where incentives, emissions, liquidity, and treasury assumptions can break under pressure.",
+    implementation: "High",
+    readTime: "Framework",
+  },
+  {
+    title: "Temporal Liquidity Risk Simulation",
+    href: "https://universalventures9.wordpress.com/artifacts/",
+    type: "Simulation",
+    domain: "Liquidity",
+    problem: "Model timing risk when liquidity demand arrives faster than the system can rebalance.",
+    implementation: "High",
+    readTime: "Simulation",
+  },
+  {
+    title: "Mechanism Review Path",
+    href: "https://universalventures9.wordpress.com/mechanism-review/",
+    type: "Review path",
+    domain: "Mechanism Design",
+    problem: "Convert an uncertain mechanism problem into a diagnosis, constraint map, and failure analysis.",
+    implementation: "High",
+    readTime: "Engagement path",
+  },
+  {
+    title: "Research Access Path",
+    href: "https://universalventures9.wordpress.com/research-access/",
+    type: "Research path",
+    domain: "Research",
+    problem: "Give teams a lower-friction way to inspect frameworks, artifacts, and domain logic before advisory work.",
+    implementation: "Medium",
+    readTime: "Access layer",
+  },
+  {
+    title: "The Physics of Finality",
+    href: "https://medium.com/coinmonks/the-physics-of-finality-how-alpenglow-turns-geography-into-governance-d71405f756c8",
+    type: "Research Note",
+    domain: "Infrastructure",
+    problem: "Explain how latency, topology, and geography become economic and governance variables.",
+    implementation: "Medium",
+    readTime: "Essay",
+  },
+  {
+    title: "institutional-crypto-funding-analyzer",
+    href: "https://github.com/vishnugovind10/institutional-crypto-funding-analyzer",
+    type: "Repository",
+    domain: "Market Design",
+    problem: "Analyze funding exposure, stress scenarios, and risk metrics across exchange infrastructure.",
+    implementation: "High",
+    readTime: "Code",
+  },
+  {
+    title: "MarketMaking",
+    href: "https://github.com/vishnugovind10/MarketMaking",
+    type: "Repository",
+    domain: "Liquidity",
+    problem: "Demonstrate bid-ask logic, inventory awareness, P&L monitoring, and risk stop conditions.",
+    implementation: "High",
+    readTime: "Code",
+  },
+  {
+    title: "coordination-fabric",
+    href: "https://github.com/vishnugovind10/coordination-fabric",
+    type: "Repository",
+    domain: "Coordination",
+    problem: "Visualize infrastructure coordination under routing, congestion, and pressure-state changes.",
+    implementation: "High",
+    readTime: "Code",
   },
 ];
 

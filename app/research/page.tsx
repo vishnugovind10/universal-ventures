@@ -1,116 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { PageHeader } from "@/components/page-header";
-import { repositoryEvidence, researchEvidence } from "@/lib/content-model";
+import { researchObjectFilters, researchObjects } from "@/lib/content-model";
 
 export const metadata: Metadata = {
-  title: "Research + Systems",
+  title: "Research Objects",
   description:
-    "Research and implementation evidence across protocol economics, market infrastructure, coordination systems, and trading infrastructure.",
+    "Research objects, frameworks, simulations, repositories, and artifacts across protocol economics, market infrastructure, and coordination systems.",
 };
 
 export default function ResearchPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Research + Systems"
-        title="Ideas are useful when they connect to implementation."
-        lede="This page bridges published systems research with public repositories, prototypes, and implementation signals."
+        eyebrow="Research Objects"
+        title="Frameworks, simulations, repositories, and research notes with implementation value."
+        lede="This is the retrieval layer for Universal Ventures: proof objects organized by problem solved, artifact type, and implementation depth."
       />
 
-      <EvidenceSection
-        eyebrow="Research"
-        title="Published analysis with explicit system implications."
-        copy="Each essay is framed by thesis, key insight, and the systems work it connects to."
-      >
-        {researchEvidence.map((item) => (
-          <article key={item.title} className="border-b border-line py-7">
-            <div className="grid gap-5 md:grid-cols-[0.28fr_0.72fr]">
-              <div>
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-mono text-xs uppercase tracking-[0.16em] text-accent no-underline"
-                >
-                  Medium
-                </Link>
-                <h2 className="mt-4 text-2xl font-semibold leading-tight">
-                  {item.title}
-                </h2>
-              </div>
-              <div className="grid gap-4 md:grid-cols-3">
-                <Signal label="Thesis" value={item.thesis} />
-                <Signal label="Key insight" value={item.insight} />
-                <Signal label="Related systems" value={item.relatedSystems} />
-              </div>
-            </div>
-          </article>
-        ))}
-      </EvidenceSection>
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20 lg:px-16">
+          <div className="flex flex-wrap gap-2">
+            {researchObjectFilters.map((filter) => (
+              <span
+                key={filter}
+                className="border border-line bg-surface px-3 py-2 font-mono text-xs text-muted"
+              >
+                {filter}
+              </span>
+            ))}
+          </div>
 
-      <EvidenceSection
-        eyebrow="Systems"
-        title="Public repositories that demonstrate implementation capacity."
-        copy="The repositories are not client claims. They are proof surfaces: code, architecture, modules, data paths, and explicit system behavior."
-      >
-        {repositoryEvidence.map((repo) => (
-          <article key={repo.title} className="border-b border-line py-7">
-            <div className="grid gap-5 md:grid-cols-[0.28fr_0.72fr]">
-              <div>
-                <Link
-                  href={repo.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-mono text-xs uppercase tracking-[0.16em] text-accent no-underline"
-                >
-                  GitHub
-                </Link>
-                <h2 className="mt-4 break-words text-2xl font-semibold leading-tight">
-                  {repo.title}
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {researchObjects.map((object) => (
+              <Link
+                key={object.title}
+                href={object.href}
+                target={object.href.startsWith("http") ? "_blank" : undefined}
+                rel={object.href.startsWith("http") ? "noreferrer" : undefined}
+                className="border border-line bg-surface p-5 no-underline transition-colors hover:border-accent"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="border border-line px-2 py-1 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-accent">
+                    {object.type}
+                  </span>
+                  <span className="border border-line px-2 py-1 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-subtle">
+                    {object.domain}
+                  </span>
+                </div>
+                <h2 className="mt-6 break-words text-2xl font-semibold leading-tight">
+                  {object.title}
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-muted">{repo.description}</p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-3">
-                <Signal label="Capability signal" value={repo.capability} />
-                <Signal label="Implementation proof" value={repo.proof} />
-                <Signal label="Business relevance" value={repo.relevance} />
-              </div>
-            </div>
-          </article>
-        ))}
-      </EvidenceSection>
-    </>
-  );
-}
-
-function EvidenceSection({
-  eyebrow,
-  title,
-  copy,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  copy: string;
-  children: ReactNode;
-}) {
-  return (
-    <section className="border-b border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-16">
-        <div className="max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-            {eyebrow}
-          </p>
-          <h2 className="mt-6 text-4xl font-semibold leading-none tracking-tight md:text-5xl">
-            {title}
-          </h2>
-          <p className="mt-5 text-base leading-7 text-muted">{copy}</p>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <Signal label="Problem solved" value={object.problem} />
+                  <Signal label="Implementation level" value={object.implementation} />
+                  <Signal label="Artifact type" value={object.type} />
+                  <Signal label="Format" value={object.readTime} />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="mt-10 border-t border-line">{children}</div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

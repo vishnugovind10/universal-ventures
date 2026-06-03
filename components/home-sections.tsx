@@ -286,7 +286,7 @@ export function StrategicEngagement() {
                 key={step.title}
                 className="grid gap-4 border-b border-line py-7 md:grid-cols-[0.16fr_0.84fr]"
               >
-                <p className="font-mono text-xs text-subtle">0{index + 1}</p>
+                <p className="font-mono text-xs text-subtle">{index + 1}</p>
                 <div>
                   <h3 className="text-xl font-semibold">{step.title}</h3>
                   <p className="mt-3 text-base leading-7 text-foreground">

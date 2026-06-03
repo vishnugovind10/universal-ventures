@@ -43,6 +43,32 @@ export default function ThesisPage() {
 
             <ProtocolFeedbackLoop steps={protocolLoop} />
 
+            <div className="border border-line bg-surface p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                Thesis to output
+              </p>
+              <div className="mt-6 grid gap-3">
+                {[
+                  ["Incentives", "Misalignment", "Mechanism maps"],
+                  ["Behavior", "Exploitation", "Constraint frameworks"],
+                  ["Liquidity", "Fragility", "Market design"],
+                  ["Governance", "Coordination failure", "Governance systems"],
+                  ["Survivability", "Collapse", "Stress tests"],
+                ].map(([layer, failure, output]) => (
+                  <div
+                    key={layer}
+                    className="grid gap-3 border-t border-line pt-3 sm:grid-cols-3"
+                  >
+                    <p className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                      {layer}
+                    </p>
+                    <p className="text-sm leading-6 text-muted">{failure}</p>
+                    <p className="text-sm leading-6 text-foreground">{output}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="grid gap-5 md:grid-cols-2">
               {thesisSections.map((section) => (
                 <section key={section.title} className="border-t border-line pt-5">
@@ -59,7 +85,7 @@ export default function ThesisPage() {
                 href="/contact"
                 className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
               >
-                Discuss an engagement
+                Discuss a system problem
               </Link>
             </div>
           </div>

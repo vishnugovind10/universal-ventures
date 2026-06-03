@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-const staticRoutes = ["", "/thesis", "/research", "/systems", "/about", "/contact"];
+const staticRoutes = ["", "/work", "/systems", "/research", "/thesis", "/about", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

@@ -15,8 +15,8 @@ export default function SystemsPage() {
     <>
       <PageHeader
         eyebrow="Systems"
-        title="Four categories. One evidence-backed operating model."
-        lede="Each category translates a system concept into economic consequence, method, output, and artifact so delivery capability is visible."
+        title="Four system domains. Each tied to a problem, output, and artifact."
+        lede="The systems page shows where Universal Ventures is useful: economic architecture, coordination systems, market infrastructure, and institutional translation."
       />
 
       <section className="border-b border-line">
@@ -29,7 +29,7 @@ export default function SystemsPage() {
               >
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-                    System 0{index + 1}
+                    System {index + 1}
                   </p>
                   <h2 className="mt-6 text-3xl font-semibold leading-tight">
                     {category.title}
@@ -64,7 +64,7 @@ export default function SystemsPage() {
               href="/contact"
               className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
             >
-              Discuss an engagement
+              Discuss a system problem
             </Link>
           </div>
         </div>

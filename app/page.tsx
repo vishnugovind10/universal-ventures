@@ -3,14 +3,10 @@ import {
   ArtifactInfrastructure,
   BuyerOutcomes,
   CapabilityMatrix,
-  EngagementFit,
   FinalCta,
-  OperatingModel,
-  ProblemSpace,
   ResearchObservatory,
-  StructuredEngagementPath,
-  TrustLayer,
-  ValidationInfrastructure,
+  WhatActuallyDo,
+  WhySystemsBreak,
 } from "@/components/evidence-sections";
 import { HeroSystemMap } from "@/components/system-visuals";
 import { heroBrief, positioning } from "@/lib/content-model";
@@ -22,7 +18,7 @@ export default function Home() {
         <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl gap-12 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-10 md:py-20 lg:px-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-              Economic Systems Advisory & Infrastructure
+              Economic Architecture for Digital Asset Systems
             </p>
             <h1 className="mt-8 max-w-4xl break-words text-4xl font-semibold leading-[0.95] tracking-tight min-[420px]:text-5xl sm:text-6xl md:text-7xl">
               {positioning.headline}
@@ -53,12 +49,18 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
               <Link
                 href="/contact"
-                className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
+                className="inline-flex w-fit border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
               >
-                Discuss an engagement
+                Discuss a system problem
+              </Link>
+              <Link
+                href="/research"
+                className="inline-flex w-fit border border-line bg-surface px-5 py-3 font-mono text-xs text-accent no-underline transition-colors hover:border-accent"
+              >
+                Explore research objects
               </Link>
             </div>
           </div>
@@ -67,16 +69,12 @@ export default function Home() {
         </div>
       </section>
 
-      <TrustLayer />
-      <ProblemSpace />
+      <WhatActuallyDo />
+      <WhySystemsBreak />
       <CapabilityMatrix />
       <BuyerOutcomes />
-      <EngagementFit />
-      <OperatingModel />
-      <ValidationInfrastructure />
       <ArtifactInfrastructure />
       <ResearchObservatory />
-      <StructuredEngagementPath />
       <FinalCta />
     </>
   );

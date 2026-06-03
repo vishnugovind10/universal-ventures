@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
 import { engagementFit, engagementReasons, scopeAnchors } from "@/lib/content-model";
@@ -21,8 +22,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Discuss an engagement."
-        lede="Use this page when there is a concrete economic system question, a mechanism decision, or an artifact that would help a team reduce uncertainty."
+        title="Discuss a system problem."
+        lede="Whether you have a clearly defined mechanism problem or only know something feels structurally wrong, describe the system, constraints, and current pressure."
       />
 
       <section className="border-b border-line">
@@ -43,13 +44,21 @@ export default function ContactPage() {
           <div className="grid gap-12">
             <div className="max-w-3xl">
               <p className="text-2xl leading-snug text-foreground">
-                Engagements are scoped around evidence: what is breaking, what is
-                uncertain, what can be modeled, and what artifact would help the
-                team make a better decision.
+                Engagements are scoped around what needs to become clear:
+                where the system is under pressure, what decision is blocked,
+                and which artifact would help the team move.
               </p>
               <p className="mt-5 text-base leading-7 text-muted">
                 Share the system context, current concern, and whether the need is
-                assessment, architecture, or ongoing advisory cadence.
+                assessment, architecture, or ongoing advisory cadence. If the
+                problem is not fully diagnosed yet, describe the behavior that
+                looks wrong.
+              </p>
+              <p className="mt-5 text-sm leading-6 text-muted">
+                Not ready?{" "}
+                <Link href="/research" className="text-accent no-underline hover:text-accent-strong">
+                  Review research objects first.
+                </Link>
               </p>
             </div>
 
@@ -75,6 +84,9 @@ export default function ContactPage() {
                 <article key={scope.title} className="border border-line bg-surface p-5">
                   <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
                     {scope.duration}
+                  </p>
+                  <p className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+                    {scope.pricing}
                   </p>
                   <h2 className="mt-5 text-xl font-semibold">{scope.title}</h2>
                   <p className="mt-3 text-sm leading-6 text-muted">

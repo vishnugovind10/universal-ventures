@@ -2,14 +2,16 @@ export const siteConfig = {
   name: "Universal Ventures",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://universal-ventures.vercel.app",
   description:
-    "Evidence-backed economic systems advisory and infrastructure for emerging digital economies.",
+    "Economic systems advisory and infrastructure for emerging digital economies.",
 };
 
 export const navItems = [
-  { label: "Thesis", href: "/thesis" },
+  { label: "Work", href: "/work" },
   { label: "Systems", href: "/systems" },
-  { label: "Research + Systems", href: "/research" },
-  { label: "Firm", href: "/about" },
+  { label: "Research Objects", href: "/research" },
+  { label: "Thesis", href: "/thesis" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const socialLinks = [

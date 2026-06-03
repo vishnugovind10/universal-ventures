@@ -1,31 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
-import { buyerOutcomes } from "@/lib/content-model";
+import {
+  buyerOutcomes,
+  founderProfile,
+  proofObjects,
+  workingPrinciples,
+} from "@/lib/content-model";
 
 const operatingSignals = [
-  "Economic design review",
-  "Market structure analysis",
-  "Digital infrastructure translation",
-  "Research-driven artifact production",
-  "Implementation-focused decision support",
-  "Scoped advisory delivery",
-];
-
-const proofPoints = [
-  "Public repositories across execution, market analytics, trading systems, and infrastructure observatories.",
-  "Published systems analysis on finality, routing, agentic economies, market making, and tokenization.",
-  "Artifact-based engagement model: maps, matrices, trees, diagrams, simulations, and evidence packs.",
-];
-
-const deliveryPrinciples = [
-  "Scope the uncertainty before recommending mechanisms.",
-  "Use artifacts to make assumptions reviewable.",
-  "Translate system logic into decisions teams can govern.",
+  "Digital asset systems",
+  "Cryptoeconomic design",
+  "Market structure",
+  "Distributed coordination",
+  "Mechanism engineering",
 ];
 
 export const metadata: Metadata = {
-  title: "Firm",
+  title: "About",
   description:
     "Universal Ventures is an independent economic systems advisory practice operating across economic design, market structure, and digital infrastructure.",
 };
@@ -34,20 +26,23 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Firm"
-        title="Independent economic infrastructure practice."
-        lede="Universal Ventures operates at the intersection of economic design, market structure, and digital infrastructure with a scoped, artifact-led delivery model."
+        eyebrow="About"
+        title="A focused economic systems practice led by Vishnu Govind."
+        lede="Universal Ventures exists to bridge theory and implementation for digital asset systems: token design, treasury architecture, governance, liquidity, and coordination under real constraints."
       />
 
       <section className="border-b border-line">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.34fr_0.66fr] lg:px-16">
           <aside className="border border-line bg-surface p-6">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Practice profile
+              Founder
             </p>
             <h2 className="mt-8 text-4xl font-semibold leading-none">
-              Evidence-backed, research-driven, implementation-focused.
+              {founderProfile.name}
             </h2>
+            <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-subtle">
+              {founderProfile.role}
+            </p>
             <div className="mt-8 grid gap-3">
               {operatingSignals.map((signal) => (
                 <p key={signal} className="border-t border-line pt-3 text-sm text-muted">
@@ -59,18 +54,14 @@ export default function AboutPage() {
 
           <div className="max-w-3xl">
             <p className="text-2xl leading-snug text-foreground">
-              The practice helps teams make token, treasury, governance,
-              liquidity, and market infrastructure decisions with stronger
-              evidence and clearer outputs.
+              {founderProfile.focus}
             </p>
             <p className="mt-6 text-base leading-7 text-muted">
-              The work is boutique by design: scoped, research-driven, and built
-              around artifacts that teams can review, challenge, govern, and
-              implement.
+              {founderProfile.why}
             </p>
 
             <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {deliveryPrinciples.map((principle) => (
+              {workingPrinciples.map((principle) => (
                 <p
                   key={principle}
                   className="border border-line bg-surface p-4 text-sm leading-6 text-muted"
@@ -78,6 +69,20 @@ export default function AboutPage() {
                   {principle}
                 </p>
               ))}
+            </div>
+
+            <div className="mt-10 border-t border-line pt-8">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                Why this exists
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold leading-tight">
+                Theory is only useful when it changes what a team can decide.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-muted">
+                The practice converts system analysis into reviewable objects:
+                mechanism maps, simulation outputs, governance models, treasury
+                matrices, and constraint frameworks.
+              </p>
             </div>
 
             <div className="mt-10 grid gap-4">
@@ -94,12 +99,20 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10 grid gap-5">
-              {proofPoints.map((point, index) => (
-                <section key={point} className="border-t border-line pt-5">
+              {proofObjects.map((object, index) => (
+                <section key={object.title} className="border-t border-line pt-5">
                   <p className="font-mono text-xs uppercase tracking-[0.14em] text-subtle">
-                    Proof 0{index + 1}
+                    Proof {index + 1}
                   </p>
-                  <p className="mt-3 text-base leading-7 text-muted">{point}</p>
+                  <Link
+                    href={object.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex text-base leading-7 text-foreground no-underline hover:text-accent"
+                  >
+                    {object.title}
+                  </Link>
+                  <p className="mt-2 text-sm leading-6 text-muted">{object.output}</p>
                 </section>
               ))}
             </div>
@@ -109,7 +122,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex border border-accent bg-accent px-5 py-3 font-mono text-xs text-surface no-underline transition-colors hover:bg-accent-strong"
               >
-                Discuss an engagement
+                Discuss a system problem
               </Link>
             </div>
           </div>
