@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Universal Ventures",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://universal-ventures.vercel.app",
   description:
-    "Economic systems advisory and infrastructure for emerging digital economies.",
+    "Institutional economic architecture for digital asset systems operating under real constraints.",
 };
 
 export const navItems = [

@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { Geist_Mono, IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
+import { Navigation } from "@/components/Navigation";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -40,15 +41,13 @@ export const metadata: Metadata = {
   publisher: "Universal Ventures",
   keywords: [
     "Universal Ventures",
-    "survivable economic systems",
-    "coordination architecture",
-    "economic systems architecture",
-    "coordination systems",
-    "token economics",
-    "protocol design",
+    "digital asset economic architecture",
+    "institutional token systems",
+    "mechanism design",
     "treasury architecture",
-    "liquidity architecture",
     "governance systems",
+    "market structure",
+    "coordination infrastructure",
   ],
   openGraph: {
     title: siteConfig.name,
@@ -72,10 +71,10 @@ function ThemeScript() {
 (() => {
   try {
     const stored = localStorage.getItem("uv-theme");
-    const theme = stored === "light" || stored === "dark" ? stored : "light";
+    const theme = stored === "light" || stored === "dark" ? stored : "dark";
     document.documentElement.dataset.theme = theme;
   } catch {
-    document.documentElement.dataset.theme = "light";
+    document.documentElement.dataset.theme = "dark";
   }
 })();
 `;
@@ -93,7 +92,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
-      className={`${plexSans.variable} ${sourceSerif.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${cormorant.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <head>
         <ThemeScript />
@@ -103,8 +102,8 @@ export default function RootLayout({
           Skip to content
         </a>
         <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main id="main-content" className="flex-1">
+          <Navigation />
+          <main id="main-content" className="flex-1 pt-16">
             {children}
           </main>
           <SiteFooter />

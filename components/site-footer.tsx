@@ -3,11 +3,11 @@ import { navItems, siteConfig, socialLinks } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-inverse text-inverse-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1fr_1fr] md:px-10 lg:px-16">
+    <footer className="border-t border-line bg-surface text-foreground">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 md:grid-cols-[1fr_1fr] md:px-10 lg:px-16">
         <div>
-          <p className="text-2xl font-semibold">{siteConfig.name}</p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-inverse-foreground/70">
+          <p className="font-serif text-3xl font-medium">{siteConfig.name}</p>
+          <p className="mt-4 max-w-md text-sm leading-6 text-muted">
             Economic architecture for token, treasury, governance, liquidity,
             and coordination systems operating under pressure.
           </p>
@@ -18,7 +18,7 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-inverse-foreground/70 hover:text-inverse-foreground"
+                className="font-mono text-[0.68rem] uppercase tracking-[0.1em] text-muted no-underline hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -31,7 +31,7 @@ export function SiteFooter() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-inverse-foreground/70 hover:text-inverse-foreground"
+                className="font-mono text-[0.68rem] uppercase tracking-[0.1em] text-muted no-underline hover:text-accent"
               >
                 {item.label}
               </a>

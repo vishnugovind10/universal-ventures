@@ -18,9 +18,9 @@ function resolveTheme(): Theme {
       return stored;
     }
 
-    return "light";
+    return "dark";
   } catch {
-    return "light";
+    return "dark";
   }
 }
 
@@ -41,7 +41,7 @@ function subscribe(listener: () => void) {
 }
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, resolveTheme, () => "light");
+  const theme = useSyncExternalStore(subscribe, resolveTheme, () => "dark");
 
   function toggleTheme() {
     const nextTheme = theme === "dark" ? "light" : "dark";
@@ -54,7 +54,7 @@ export function ThemeToggle() {
       aria-label="Toggle color mode"
       aria-pressed={theme === "dark"}
       onClick={toggleTheme}
-      className="w-fit border border-line bg-surface-muted px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+      className="h-9 w-fit border border-line bg-transparent px-3 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-muted transition-colors hover:border-accent hover:text-accent"
     >
       {theme === "dark" ? "Dark" : "Light"}
     </button>

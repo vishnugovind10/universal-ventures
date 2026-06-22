@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --background: #f7f8fa;
-  --foreground: #102033;
-  --muted: #516170;
-  --subtle: #7b8792;
-  --line: #dbe1e7;
-  --line-strong: #9aaabd;
-  --surface: #ffffff;
-  --surface-muted: #edf2f6;
-  --inverse: #0b1b2d;
-  --inverse-foreground: #f7f8fa;
-  --accent: #0b5f8a;
-  --accent-muted: #d9eef8;
-  --accent-strong: #083f63;
+  color-scheme: dark;
+  --background: #060a12;
+  --foreground: #ede8df;
+  --muted: #9aa3ad;
+  --subtle: #687482;
+  --line: #202a36;
+  --line-strong: #465363;
+  --surface: #0b111b;
+  --surface-muted: #101824;
+  --inverse: #ede8df;
+  --inverse-foreground: #060a12;
+  --accent: #c9a84c;
+  --accent-muted: #29220f;
+  --accent-strong: #e2c76d;
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --background: #08111c;
-  --foreground: #f4f7fb;
-  --muted: #b5c0ca;
-  --subtle: #758391;
-  --line: #1f3245;
-  --line-strong: #496176;
-  --surface: #0f1b28;
-  --surface-muted: #152535;
-  --inverse: #f7f8fa;
-  --inverse-foreground: #0b1b2d;
-  --accent: #7ac3e4;
-  --accent-muted: #12344a;
-  --accent-strong: #b8e2f4;
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #f3f0e9;
+  --foreground: #141821;
+  --muted: #59616b;
+  --subtle: #7a8189;
+  --line: #d4cec2;
+  --line-strong: #968d7d;
+  --surface: #fbf9f4;
+  --surface-muted: #e9e4da;
+  --inverse: #141821;
+  --inverse-foreground: #f3f0e9;
+  --accent: #8c6c1d;
+  --accent-muted: #eee2bd;
+  --accent-strong: #6d5110;
 }
 
 @theme inline {
@@ -48,9 +48,9 @@
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);
   --color-accent-strong: var(--accent-strong);
-  --font-sans: var(--font-plex-sans);
-  --font-serif: var(--font-source-serif);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 * {
@@ -68,7 +68,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   text-rendering: geometricPrecision;
   overflow-x: hidden;
 }
@@ -131,7 +131,7 @@ svg {
 .article-prose h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
-  font-family: var(--font-source-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 500;
   line-height: 1.08;
@@ -162,6 +162,27 @@ svg {
 .article-prose strong {
   color: var(--foreground);
   font-weight: 600;
+}
+
+.institutional-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 11%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 11%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center;
+}
+
+.institutional-grid::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--background) 0%, transparent 48%, var(--background) 100%);
+}
+
+.institutional-grid > * {
+  position: relative;
+  z-index: 1;
 }
 
 .uv-flow-line {
