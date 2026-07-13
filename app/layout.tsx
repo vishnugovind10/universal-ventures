@@ -59,14 +59,24 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: `${basePath}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Universal Ventures — Economic architecture for digital asset systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — Economic Architecture for Digital Asset Systems`,
     description: siteConfig.description,
+    images: [`${basePath}/og-image.png`],
   },
   icons: {
     icon: `${basePath}/icon.svg`,
+    apple: `${basePath}/apple-icon.png`,
   },
 };
 
