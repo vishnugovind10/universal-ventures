@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { SiteFooter } from "@/components/site-footer";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, socialLinks } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,10 +31,13 @@ const basePath = process.env.PAGES_BASE_PATH || "";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} — Economic Architecture for Digital Asset Systems`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  alternates: {
+    canonical: "./",
+  },
   applicationName: siteConfig.name,
   authors: [{ name: "Universal Ventures" }],
   creator: "Universal Ventures",
@@ -50,21 +53,72 @@ export const metadata: Metadata = {
     "coordination infrastructure",
   ],
   openGraph: {
-    title: siteConfig.name,
+    title: `${siteConfig.name} — Economic Architecture for Digital Asset Systems`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
     type: "website",
+    locale: "en_US",
   },
   twitter: {
-    card: "summary",
-    title: siteConfig.name,
+    card: "summary_large_image",
+    title: `${siteConfig.name} — Economic Architecture for Digital Asset Systems`,
     description: siteConfig.description,
   },
   icons: {
     icon: `${basePath}/icon.svg`,
   },
 };
+
+function StructuredData() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteConfig.url}/#organization`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        logo: `${siteConfig.url}/icon.svg`,
+        sameAs: socialLinks.map((link) => link.href),
+        founder: {
+          "@type": "Person",
+          name: "Vishnu Govind",
+          jobTitle: "Founder",
+          url: `${siteConfig.url}/about/`,
+          sameAs: [
+            "https://www.linkedin.com/in/vishnu-govind/",
+            "https://github.com/vishnugovind10",
+            "https://vishnugovind10.medium.com/",
+          ],
+        },
+        knowsAbout: [
+          "Tokenomics",
+          "Treasury architecture",
+          "Governance systems",
+          "Market structure",
+          "Digital asset infrastructure",
+          "Mechanism design",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        publisher: { "@id": `${siteConfig.url}/#organization` },
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
 
 function ThemeScript() {
   const script = `
@@ -96,6 +150,7 @@ export default function RootLayout({
     >
       <head>
         <ThemeScript />
+        <StructuredData />
       </head>
       <body className="min-h-full bg-background text-foreground">
         <a className="skip-link" href="#main-content">
