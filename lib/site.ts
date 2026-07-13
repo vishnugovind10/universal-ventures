@@ -15,7 +15,7 @@ export const navItems = [
 ];
 
 export const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/universalventures/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/vishnu-govind/" },
   { label: "Medium", href: "https://vishnugovind10.medium.com/" },
   { label: "GitHub", href: "https://github.com/vishnugovind10" },
 ];
