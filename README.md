@@ -123,7 +123,7 @@ entry is rendered as a local static article at `/research/[slug]/`.
 - **[navbridge](https://github.com/vishnugovind10/navbridge)** — NAV integrity monitoring for tokenized funds
 - **[peglab](https://github.com/vishnugovind10/peglab)** — stablecoin stress-testing workbench
 - **[slotscope](https://github.com/vishnugovind10/slotscope)** — state-contention profiler for parallel EVMs
-- **[infrabench](https://github.com/vishnugovind10/infrabench)** — reproducible Solana RPC measurement
+- **[infrabench](https://github.com/vishnugovind10/infrabench)** — Agentic FinOps Gateway: autonomous compute financial governance and decision ledger
 
 ### Q: Where is the research published?
 
