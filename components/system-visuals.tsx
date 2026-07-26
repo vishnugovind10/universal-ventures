@@ -12,20 +12,20 @@ type LoopStep = {
 
 export function HeroSystemMap() {
   const nodes = [
-    { label: "Treasury", x: 52, y: 46 },
+    { label: "Reserves", x: 52, y: 46 },
     { label: "Governance", x: 208, y: 42 },
     { label: "Liquidity", x: 356, y: 74 },
-    { label: "Validators", x: 88, y: 188 },
-    { label: "Incentives", x: 252, y: 202 },
-    { label: "Subnets", x: 392, y: 210 },
-    { label: "Coordination", x: 210, y: 328 },
+    { label: "Custody", x: 88, y: 188 },
+    { label: "Settlement", x: 252, y: 202 },
+    { label: "Compliance", x: 392, y: 210 },
+    { label: "NAV Integrity", x: 210, y: 328 },
   ];
 
   return (
     <div className="relative overflow-hidden border border-line bg-surface p-4 shadow-sm shadow-line/30 sm:p-6">
       <div className="mb-5 flex items-center justify-between gap-4 border-b border-line pb-4">
-        <p className="font-mono text-xs text-subtle">Economic architecture map</p>
-        <p className="font-mono text-xs text-accent">pressure paths</p>
+        <p className="font-mono text-xs text-subtle">Economic &amp; settlement architecture map</p>
+        <p className="font-mono text-xs text-accent">stress paths</p>
       </div>
 
       <svg

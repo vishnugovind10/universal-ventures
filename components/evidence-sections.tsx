@@ -4,6 +4,7 @@ import { ProofVisual } from "@/components/proof-visuals";
 import {
   advisoryServices,
   buyerOutcomes,
+  credibilityStrip,
   evidenceMetrics,
   engagementFit,
   observatoryHighlights,
@@ -20,6 +21,23 @@ import {
   whySystemsBreak,
 } from "@/lib/content-model";
 
+export function CredibilityStrip() {
+  return (
+    <section className="border-b border-line bg-surface">
+      <div className="mx-auto grid max-w-6xl gap-4 px-6 py-8 md:grid-cols-2 md:px-10 lg:px-16">
+        {credibilityStrip.map((line) => (
+          <p
+            key={line}
+            className="border-t border-line pt-4 font-mono text-xs leading-6 text-muted"
+          >
+            {line}
+          </p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function WhatActuallyDo() {
   return (
     <section className="border-b border-line bg-surface">
@@ -27,10 +45,10 @@ export function WhatActuallyDo() {
         <div className="grid gap-8 lg:grid-cols-[0.32fr_0.68fr]">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              What we actually do
+              What I actually do
             </p>
             <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl">
-              We help teams turn economic ambiguity into usable system decisions.
+              I help institutions, protocols, and funds turn economic ambiguity into usable system decisions.
             </h2>
             <p className="mt-5 text-sm leading-6 text-muted">
               The work produces maps, matrices, mechanism reviews, simulations,

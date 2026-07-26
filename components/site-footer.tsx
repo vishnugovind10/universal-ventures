@@ -8,8 +8,9 @@ export function SiteFooter() {
         <div>
           <p className="font-serif text-3xl font-medium">{siteConfig.name}</p>
           <p className="mt-4 max-w-md text-sm leading-6 text-muted">
-            Economic architecture for token, treasury, governance, liquidity,
-            and coordination systems operating under pressure.
+            Economic and settlement architecture for institutional digital
+            asset systems — token economics, stablecoin mechanisms, and
+            MiCA/DORA readiness.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">

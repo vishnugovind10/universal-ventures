@@ -3,6 +3,7 @@ import {
   ArtifactInfrastructure,
   BuyerOutcomes,
   CapabilityMatrix,
+  CredibilityStrip,
   FinalCta,
   ResearchObservatory,
   WhatActuallyDo,
@@ -18,7 +19,7 @@ export default function Home() {
         <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl gap-12 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-10 md:py-20 lg:px-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-              Economic Architecture for Digital Asset Systems
+              Economic &amp; Settlement Architecture for Institutional Digital Assets
             </p>
             <h1 className="mt-8 max-w-4xl break-words text-4xl font-semibold leading-[0.95] tracking-tight min-[420px]:text-5xl sm:text-6xl md:text-7xl">
               {positioning.headline}
@@ -60,7 +61,7 @@ export default function Home() {
                 href="/research"
                 className="inline-flex w-fit border border-line bg-surface px-5 py-3 font-mono text-xs text-accent no-underline transition-colors hover:border-accent"
               >
-                Explore research objects
+                See the tools
               </Link>
             </div>
           </div>
@@ -69,6 +70,7 @@ export default function Home() {
         </div>
       </section>
 
+      <CredibilityStrip />
       <WhatActuallyDo />
       <WhySystemsBreak />
       <CapabilityMatrix />

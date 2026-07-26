@@ -35,7 +35,317 @@ export function ProofVisual({ type }: { type: string }) {
     return <MarketMakingVisual />;
   }
 
+  if (type === "peglab") {
+    return <PegStressVisual />;
+  }
+
+  if (type === "navbridge") {
+    return <NavReconciliationVisual />;
+  }
+
+  if (type === "canton") {
+    return <CantonSyncVisual />;
+  }
+
+  if (type === "haircut") {
+    return <HaircutVisual />;
+  }
+
+  if (type === "warrant") {
+    return <WarrantVisual />;
+  }
+
+  if (type === "slotscope") {
+    return <SlotscopeVisual />;
+  }
+
+  if (type === "reserve-waterfall") {
+    return <ReserveWaterfallVisual />;
+  }
+
+  if (type === "redemption-queue") {
+    return <RedemptionQueueVisual />;
+  }
+
+  if (type === "regulatory-heatmap") {
+    return <RegulatoryHeatmapVisual />;
+  }
+
+  if (type === "settlement-sync") {
+    return <SettlementSyncVisual />;
+  }
+
+  if (type === "nav-drift") {
+    return <NavDriftVisual />;
+  }
+
+  if (type === "constraint-tree") {
+    return <ConstraintTreeVisual />;
+  }
+
   return <TwapVisual />;
+}
+
+function ReserveWaterfallVisual() {
+  const bars = [
+    { label: "Reserve", h: 118, tone: "var(--surface)" },
+    { label: "Impaired", h: 92, tone: "var(--accent-muted)" },
+    { label: "Stressed", h: 64, tone: "var(--accent-muted)" },
+    { label: "Redemptions", h: 40, tone: "var(--surface-muted)" },
+  ];
+
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="152" x2="330" y2="152" stroke="var(--line)" />
+      {bars.map((bar, index) => (
+        <g key={bar.label}>
+          <rect
+            x={54 + index * 72}
+            y={152 - bar.h}
+            width="48"
+            height={bar.h}
+            fill={bar.tone}
+            stroke="currentColor"
+          />
+          <text x={54 + index * 72} y="170" fill="var(--muted)" fontSize="10">
+            {bar.label}
+          </text>
+        </g>
+      ))}
+      <path d="M78 34 C140 34 220 34 280 34" stroke="var(--line-strong)" strokeDasharray="4 6" />
+      <text x="30" y="24" fill="var(--muted)" fontSize="12">par value</text>
+    </svg>
+  );
+}
+
+function RedemptionQueueVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="150" x2="330" y2="150" stroke="var(--line)" />
+      <line x1="46" y1="30" x2="46" y2="154" stroke="var(--line)" />
+      <path
+        d="M52 60 C90 62 108 66 132 78 C160 92 176 118 206 130 C240 144 280 146 326 148"
+        fill="none"
+        stroke="currentColor"
+      />
+      <rect x="132" y="30" width="94" height="46" fill="var(--accent-muted)" stroke="currentColor" opacity="0.5" />
+      <text x="142" y="52" fill="var(--foreground)" fontSize="11">payout gap</text>
+      <text x="30" y="20" fill="var(--muted)" fontSize="12">queue depth over time</text>
+    </svg>
+  );
+}
+
+function RegulatoryHeatmapVisual() {
+  const rows = 3;
+  const cols = 5;
+  const scores = [2, 1, 0, 1, 2, 0, 0, 1, 2, 1, 1, 0, 1, 2, 0];
+  const tones = ["var(--surface)", "var(--accent-muted)", "var(--line-strong)"];
+
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      {Array.from({ length: rows }).map((_, row) =>
+        Array.from({ length: cols }).map((_, col) => {
+          const i = row * cols + col;
+          return (
+            <rect
+              key={i}
+              x={30 + col * 62}
+              y={30 + row * 46}
+              width="52"
+              height="36"
+              fill={tones[scores[i]]}
+              stroke="currentColor"
+            />
+          );
+        }),
+      )}
+      <text x="30" y="182" fill="var(--muted)" fontSize="11">perimeter · MiCA · DORA · token-native · evidence</text>
+    </svg>
+  );
+}
+
+function SettlementSyncVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="150" x2="330" y2="150" stroke="var(--line)" />
+      <line x1="46" y1="30" x2="46" y2="154" stroke="var(--line)" />
+      <path
+        d="M52 60 C110 58 160 60 200 64"
+        fill="none"
+        stroke="var(--line-strong)"
+      />
+      <path
+        d="M52 60 C110 76 160 104 200 132 C246 150 288 148 326 130"
+        fill="none"
+        stroke="currentColor"
+      />
+      <line x1="200" y1="64" x2="200" y2="132" stroke="currentColor" strokeDasharray="3 5" />
+      <text x="208" y="100" fill="var(--foreground)" fontSize="11">sync debt</text>
+      <text x="30" y="20" fill="var(--muted)" fontSize="12">domain drift over time</text>
+    </svg>
+  );
+}
+
+function NavDriftVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="150" x2="330" y2="150" stroke="var(--line)" />
+      <path
+        d="M40 84 C100 82 160 80 220 78 C260 76 300 74 330 72"
+        fill="none"
+        stroke="var(--line-strong)"
+      />
+      <path
+        d="M40 88 C100 90 160 96 220 108 C260 118 300 128 330 138"
+        fill="none"
+        stroke="currentColor"
+      />
+      <circle cx="220" cy="108" r="5" fill="currentColor" />
+      <line x1="220" y1="78" x2="220" y2="108" stroke="currentColor" strokeDasharray="3 5" />
+      <text x="228" y="96" fill="var(--foreground)" fontSize="11">drift flagged</text>
+      <text x="30" y="24" fill="var(--muted)" fontSize="12">on-chain vs. fund books</text>
+    </svg>
+  );
+}
+
+function ConstraintTreeVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <rect x="140" y="20" width="80" height="32" fill="var(--accent-muted)" stroke="currentColor" />
+      <text x="152" y="41" fill="var(--foreground)" fontSize="11">root hash</text>
+      {[40, 140, 240].map((x) => (
+        <g key={x}>
+          <rect x={x} y="90" width="80" height="30" fill="var(--surface)" stroke="currentColor" />
+          <path d={`M180 52 C180 74 ${x + 40} 74 ${x + 40} 90`} fill="none" stroke="currentColor" />
+        </g>
+      ))}
+      {[10, 90, 170, 250].map((x, index) => (
+        <g key={x}>
+          <rect x={x} y="146" width="60" height="26" fill="var(--surface-muted)" stroke="currentColor" />
+          <text x={x + 8} y="163" fill="var(--foreground)" fontSize="10">
+            {["auth", "limit", "action", "log"][index]}
+          </text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+function PegStressVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="94" x2="330" y2="94" stroke="var(--line-strong)" strokeDasharray="4 6" />
+      <path
+        d="M30 94 C70 96 96 92 128 100 C160 108 176 132 200 150 C224 168 260 158 330 132"
+        fill="none"
+        stroke="currentColor"
+      />
+      <circle cx="200" cy="150" r="5" fill="currentColor" />
+      <text x="30" y="24" fill="var(--muted)" fontSize="12">peg</text>
+      <text x="176" y="168" fill="var(--foreground)" fontSize="12">depeg event</text>
+    </svg>
+  );
+}
+
+function NavReconciliationVisual() {
+  const cells = [
+    ["Ledger", "On-chain", "Books"],
+    ["Supply", "1.000", "1.000"],
+    ["NAV", "1.021", "1.019"],
+    ["Delta", "flag", "flag"],
+  ];
+
+  return (
+    <div className="grid grid-cols-3 border border-line text-xs">
+      {cells.flatMap((row, rowIndex) =>
+        row.map((cell, cellIndex) => (
+          <div
+            key={`${rowIndex}-${cellIndex}`}
+            className={`border-b border-r border-line px-3 py-3 ${
+              rowIndex === 0 ? "bg-accent-muted font-semibold text-foreground" : "bg-surface"
+            }`}
+          >
+            {cell}
+          </div>
+        )),
+      )}
+    </div>
+  );
+}
+
+function CantonSyncVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <rect x="34" y="30" width="100" height="46" fill="var(--accent-muted)" stroke="currentColor" />
+      <rect x="228" y="30" width="100" height="46" fill="var(--surface)" stroke="currentColor" />
+      <rect x="130" y="120" width="100" height="46" fill="var(--surface-muted)" stroke="currentColor" />
+      <path d="M134 53 H228 M180 76 V120 M84 76 V143 H130 M278 76 V143 H230" fill="none" stroke="currentColor" />
+      <text x="46" y="57" fill="var(--foreground)" fontSize="12">domain A</text>
+      <text x="240" y="57" fill="var(--foreground)" fontSize="12">domain B</text>
+      <text x="146" y="147" fill="var(--foreground)" fontSize="12">sync debt</text>
+    </svg>
+  );
+}
+
+function HaircutVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="150" x2="330" y2="150" stroke="var(--line)" />
+      {[0, 1, 2, 3, 4, 5].map((item) => (
+        <rect
+          key={item}
+          x={48 + item * 46}
+          y={150 - (24 + item * 14)}
+          width="26"
+          height={24 + item * 14}
+          fill={item > 3 ? "var(--accent-muted)" : "var(--surface)"}
+          stroke="currentColor"
+        />
+      ))}
+      <text x="30" y="24" fill="var(--muted)" fontSize="12">liquidity concentration</text>
+      <text x="266" y="52" fill="var(--foreground)" fontSize="12">haircut</text>
+    </svg>
+  );
+}
+
+function WarrantVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <rect x="130" y="20" width="100" height="34" fill="var(--accent-muted)" stroke="currentColor" />
+      <text x="150" y="42" fill="var(--foreground)" fontSize="12">warrant</text>
+      {[40, 140, 240].map((x, index) => (
+        <g key={x}>
+          <rect x={x} y="126" width="80" height="34" fill="var(--surface)" stroke="currentColor" />
+          <text x={x + 12} y="148" fill="var(--foreground)" fontSize="11">
+            {["action", "action", "action"][index]}
+          </text>
+          <path d={`M180 54 C180 90 ${x + 40} 90 ${x + 40} 126`} fill="none" stroke="currentColor" />
+        </g>
+      ))}
+      <text x="40" y="182" fill="var(--muted)" fontSize="11">merkle constraint commitments</text>
+    </svg>
+  );
+}
+
+function SlotscopeVisual() {
+  return (
+    <svg viewBox="0 0 360 190" className="h-auto w-full text-accent" aria-hidden="true">
+      <line x1="30" y1="150" x2="330" y2="150" stroke="var(--line)" />
+      <line x1="46" y1="30" x2="46" y2="154" stroke="var(--line)" />
+      {[0, 1, 2, 3, 4, 5, 6].map((item) => (
+        <rect
+          key={item}
+          x={58 + item * 38}
+          y={150 - (18 + ((item * 37) % 90))}
+          width="22"
+          height={18 + ((item * 37) % 90)}
+          fill={(item * 37) % 90 > 60 ? "var(--accent-muted)" : "var(--surface)"}
+          stroke="currentColor"
+        />
+      ))}
+      <text x="30" y="20" fill="var(--muted)" fontSize="12">state-slot contention</text>
+    </svg>
+  );
 }
 
 function IncentiveMap() {

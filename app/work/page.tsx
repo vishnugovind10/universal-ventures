@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ProofVisual } from "@/components/proof-visuals";
+import { earlierWork } from "@/lib/content-model";
 
 const capabilities = [
   "Economic Architecture",
@@ -122,9 +124,9 @@ export default function WorkPage() {
               Economic systems built to remain legible under pressure.
             </h1>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              Universal Ventures advises protocols, digital asset networks, and
-              institutional ecosystems on token design, treasury, governance,
-              liquidity, and coordination decisions that cannot be treated in isolation.
+              I advise banks, advisory firms, protocols, and funds on token
+              design, stablecoin mechanisms, settlement architecture, and
+              treasury and governance decisions that cannot be treated in isolation.
             </p>
             <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
               <Link
@@ -172,7 +174,7 @@ export default function WorkPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:px-10 md:py-28 lg:grid-cols-[0.32fr_0.68fr] lg:px-16">
           <div>
             <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-accent">
-              What We Solve
+              What I Solve
             </p>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-none md:text-5xl">
               Structural problems with economic consequences.
@@ -264,6 +266,48 @@ export default function WorkPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-16">
+          <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-accent">
+            Market Microstructure — Earlier Work
+          </p>
+          <h2 className="mt-6 max-w-2xl font-serif text-4xl font-medium leading-none md:text-5xl">
+            Trading and execution infrastructure from before the institutional practice.
+          </h2>
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-muted">
+            Proof of market microstructure fluency, not the current focus of the
+            practice.
+          </p>
+          <div className="mt-10 grid gap-5">
+            {earlierWork.map((artifact) => (
+              <article
+                key={artifact.title}
+                className="grid gap-6 border border-line bg-surface p-5 md:grid-cols-[0.34fr_0.66fr]"
+              >
+                <div className="flex min-h-40 items-center border border-line bg-background p-4">
+                  <ProofVisual type={artifact.visual} />
+                </div>
+                <div>
+                  <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-accent">
+                    {artifact.source}
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold leading-tight">{artifact.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{artifact.capability}</p>
+                  <Link
+                    href={artifact.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex font-mono text-xs text-accent no-underline hover:text-accent-strong"
+                  >
+                    View repository
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

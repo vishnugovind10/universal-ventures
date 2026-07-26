@@ -1,34 +1,41 @@
 export const positioning = {
-  headline: "Economic architecture for digital asset systems operating under real constraints.",
+  headline: "Economic and settlement architecture for institutional digital assets.",
   subheadline:
-    "We design token economies, coordination systems, treasury structures, and market mechanisms for protocols and digital asset networks that must survive adversarial conditions.",
+    "I design and stress-test the economic layer of tokenized systems — and publish the tools that verify the claims. Token economics, stablecoin mechanisms, settlement architecture and MiCA/DORA readiness for institutions, protocols and funds that need designs proven rather than described.",
   shortDescription:
-    "Economic systems advisory and infrastructure for emerging digital economies.",
+    "Economic and settlement architecture for institutional digital asset systems.",
   trustStrip: [
-    "Token economies",
-    "Treasury systems",
-    "Governance architecture",
-    "Market mechanisms",
+    "Token economics",
+    "Stablecoin mechanisms",
+    "Settlement architecture",
+    "MiCA / DORA readiness",
   ],
 };
 
 export const heroBrief = [
   {
     label: "What",
-    value: "Token, treasury, governance, liquidity, and coordination systems designed around real market behavior.",
+    value: "Token economics, stablecoin and reserve mechanisms, settlement and custody architecture, treasury and liquidity design — assessed against adversarial conditions and regulatory constraint together.",
   },
   {
     label: "Who",
-    value: "Protocol teams, infrastructure teams, DAOs, institutional ecosystems, and complex digital economies.",
+    value: "Banks and advisory firms taking tokenized products to market. Protocol teams whose economics have to survive institutional diligence. Funds running technical diligence on token-heavy investments.",
   },
   {
     label: "Why",
-    value: "Keep economic systems functional when growth, volatility, adversarial behavior, and institutional scrutiny arrive.",
+    value: "Designs that hold in normal conditions routinely fail under the events that matter — depegs, redemption waves, liquidation cascades, supervisory review. That is when the economic layer is actually tested.",
   },
   {
     label: "Next",
-    value: "Start with a system problem. Leave with a scoped path, artifact requirements, and decision surface.",
+    value: "Bring a system constraint. Leave with a scored assessment, the failure modes that matter, and a remediation path you can act on.",
   },
+];
+
+export const credibilityStrip = [
+  "ECB Eurosystem — Project Appia consultation contributor (tokenized wholesale settlement)",
+  "MiCA Crypto Alliance — research affiliation",
+  "Strategic Systems Architect, Exponential Science — protocol economic & settlement design",
+  "15 years across derivatives market-making, exchange infrastructure and wealth-management systems",
 ];
 
 export const intersections = [
@@ -133,24 +140,24 @@ export const insightHighlights = [
 
 export const evidenceMetrics = [
   {
-    value: "4",
-    label: "curated repositories",
-    detail: "Public implementation artifacts across execution, funding analytics, market making, and coordination systems.",
+    value: "11",
+    label: "open-source verification instruments",
+    detail: "Stablecoin stress-testing, NAV integrity, RWA risk, Canton audit evidence, EVM contention profiling, agent constraint enforcement.",
   },
   {
-    value: "4+",
-    label: "published systems essays",
-    detail: "Medium and Coinmonks writing on finality, routing, market making, tokenization, and agentic economies.",
+    value: "40+",
+    label: "published technical articles",
+    detail: "Coinmonks, Block Magnates, DataDrivenInvestor — tokenization, mechanism design, DeFi risk architecture, agentic AI governance.",
   },
   {
-    value: "4",
-    label: "mechanism frameworks",
-    detail: "Tokenomics stress maps, treasury matrices, governance trees, and liquidity routing diagrams.",
+    value: "2",
+    label: "published venture theses",
+    detail: "Synchronization Debt (institutional DLT) and the Integration Moat (quantum), each instrumented with working tooling.",
   },
   {
     value: "3",
     label: "engagement modes",
-    detail: "Assessment, architecture engagement, and embedded advisory support.",
+    detail: "Fixed-fee diagnostic · architecture engagement · embedded advisory.",
   },
 ];
 
@@ -162,28 +169,28 @@ export const trustSignals = [
 
 export const proofObjects = [
   {
-    title: "Tokenomics Stress Map",
-    type: "Framework",
-    source: "WordPress research system",
-    href: "https://universalventures9.wordpress.com/framework-library/",
-    problem: "Token systems can look aligned while incentives, liquidity, and treasury pressure quietly diverge.",
-    output: "Failure-mode map for pressure-testing economic design before commitments harden.",
+    title: "PegLab — Stablecoin Stress-Testing Workbench",
+    type: "Instrument",
+    source: "github.com/vishnugovind10/peglab",
+    href: "https://github.com/vishnugovind10/peglab",
+    problem: "Reserve and peg mechanisms are usually argued, not simulated.",
+    output: "Depeg and collateral stress-testing tested against reserve stress, not asserted.",
   },
   {
-    title: "Temporal Liquidity Risk Simulation",
-    type: "Simulation",
-    source: "WordPress artifacts library",
-    href: "https://universalventures9.wordpress.com/artifacts/",
-    problem: "Liquidity can disappear exactly when a system needs response capacity.",
-    output: "Scenario surface for understanding timing, drawdown, and liquidity fragility.",
+    title: "NavBridge — NAV Integrity Monitoring",
+    type: "Instrument",
+    source: "github.com/vishnugovind10/navbridge",
+    href: "https://github.com/vishnugovind10/navbridge",
+    problem: "Tokenized funds can rarely evidence that on-chain state and the fund's own books agree.",
+    output: "Reconciliation control an auditor or supervisor asks for first.",
   },
   {
-    title: "Infrastructure Constraints at Scale",
-    type: "Research object",
-    source: "Research domains",
-    href: "https://universalventures9.wordpress.com/topic-hubs/",
-    problem: "Throughput, routing, latency, and topology become economic variables as systems scale.",
-    output: "Domain map connecting infrastructure limits to governance and market-structure decisions.",
+    title: "Canton Control Plane / Observer / ProofPack",
+    type: "Instrument",
+    source: "github.com/vishnugovind10/canton-synch-control",
+    href: "https://github.com/vishnugovind10/canton-synch-control",
+    problem: "Privacy-partitioned ledgers make completeness and audit evidence hard.",
+    output: "Companion tooling to the Synchronization Debt thesis — theory and instrument published together.",
   },
 ];
 
@@ -295,14 +302,62 @@ export const selectedWork = [
 
 export const systemArtifacts = [
   {
-    title: "TWAP Execution Infrastructure",
-    source: "GitHub: TWAPexecution",
-    href: "https://github.com/vishnugovind10/TWAPexecution",
-    visual: "twap",
-    problem: "Large orders can move markets when execution is not broken into disciplined time intervals.",
-    capability: "Implements a time-weighted execution logic using exchange price data and scheduled order slices.",
-    relevance: "Shows market microstructure fluency and the ability to translate execution theory into code.",
+    title: "PegLab — Stablecoin Depeg & Collateral Stress-Testing Workbench",
+    source: "GitHub: peglab",
+    href: "https://github.com/vishnugovind10/peglab",
+    visual: "peglab",
+    problem: "Reserve and peg mechanisms are usually argued, not simulated.",
+    capability: "Simulates depeg pathways, collateral drawdown, and reserve stress across peg-defense mechanisms.",
+    relevance: "Shows mechanism design tested against reserve stress, not asserted.",
   },
+  {
+    title: "NavBridge — NAV Integrity Monitoring for Tokenized Funds",
+    source: "GitHub: navbridge",
+    href: "https://github.com/vishnugovind10/navbridge",
+    visual: "navbridge",
+    problem: "Tokenized funds can rarely evidence that on-chain state and the fund's own books agree.",
+    capability: "Reconciles on-chain token supply and NAV against off-chain fund accounting in real time.",
+    relevance: "The control an auditor or supervisor asks for first.",
+  },
+  {
+    title: "Canton Control Plane / Observer / ProofPack",
+    source: "GitHub: canton-synch-control, canton-observer, canton-proofpack",
+    href: "https://github.com/vishnugovind10/canton-synch-control",
+    visual: "canton",
+    problem: "Privacy-partitioned ledgers make completeness and audit evidence hard.",
+    capability: "Measures synchronization debt and produces tamper-evident audit evidence across Canton Network deployments.",
+    relevance: "Companion tooling to the Synchronization Debt thesis — theory and instrument published together.",
+  },
+  {
+    title: "Haircut — Institutional RWA Risk Terminal",
+    source: "GitHub: haircut",
+    href: "https://github.com/vishnugovind10/haircut",
+    visual: "haircut",
+    problem: "Redemption risk in tokenized RWA pools is scattered across vault contracts, withdrawal queues, and oracles.",
+    capability: "Dynamic haircuts, NAV VaR and liquidity concentration over live ERC-4626 pools, Centrifuge, Maple and Ondo.",
+    relevance: "Connects portfolio risk practice to on-chain exposure.",
+  },
+  {
+    title: "Agent Warrant — Verifiable Constraint Enforcement for Autonomous Agents",
+    source: "GitHub: warrant",
+    href: "https://github.com/vishnugovind10/warrant",
+    visual: "warrant",
+    problem: "Agent logs are not evidence — they can be edited, and compliant-sounding text can coexist with violating actions.",
+    capability: "Signed warrants, Merkle constraint commitments, and tamper-evident audit logs (Rust + Python).",
+    relevance: "Verifiable authorization boundaries for agents wired into payments, trading, and infrastructure.",
+  },
+  {
+    title: "Slotscope — EVM State-Contention Profiler",
+    source: "GitHub: slotscope",
+    href: "https://github.com/vishnugovind10/slotscope",
+    visual: "slotscope",
+    problem: "Parallel-execution chains punish contended contract designs, and compliance registries write to shared state on every transfer.",
+    capability: "Profiles EVM state contention and identifies where parallel execution degrades under load.",
+    relevance: "The measurement instrument behind the compliance-architecture thesis.",
+  },
+];
+
+export const earlierWork = [
   {
     title: "Market Making Engine",
     source: "GitHub: MarketMaking",
@@ -310,7 +365,16 @@ export const systemArtifacts = [
     visual: "market-making",
     problem: "Protocols need liquidity systems that account for spread, inventory, P&L, and stop conditions.",
     capability: "Demonstrates order-book analysis, bid-ask logic, P&L monitoring, and risk stop conditions.",
-    relevance: "Signals practical liquidity architecture experience beyond abstract token design.",
+    relevance: "Market microstructure fluency — 21 stars, 6 forks.",
+  },
+  {
+    title: "TWAP Execution Infrastructure",
+    source: "GitHub: TWAPexecution",
+    href: "https://github.com/vishnugovind10/TWAPexecution",
+    visual: "twap",
+    problem: "Large orders can move markets when execution is not broken into disciplined time intervals.",
+    capability: "Implements a time-weighted execution logic using exchange price data and scheduled order slices.",
+    relevance: "Translates execution theory into code.",
   },
   {
     title: "Funding Analytics Infrastructure",
@@ -321,78 +385,69 @@ export const systemArtifacts = [
     capability: "Models multi-exchange funding rates, backtests strategies, and includes risk-management views.",
     relevance: "Connects market infrastructure, analytics, and institutional operating needs.",
   },
-  {
-    title: "Token / Economic Modeling Systems",
-    source: "Conceptual advisory artifact",
-    href: "/systems",
-    visual: "token-model",
-    problem: "Token systems often separate emissions, treasury, liquidity, and governance assumptions.",
-    capability: "Uses incentive maps, treasury scenario matrices, governance trees, liquidity routing diagrams, simulation outputs, and economic system maps.",
-    relevance: "Makes economic design reviewable before implementation decisions harden.",
-  },
 ];
 
 export const visualProofExamples = [
   {
-    title: "Incentive map",
-    visual: "incentive-map",
-    description: "Shows how rewards, constraints, and participant behavior route through the system.",
+    title: "Reserve stress waterfall",
+    visual: "reserve-waterfall",
+    description: "Shows how collateral quality, drawdown speed, and redemption pressure cascade through a reserve.",
   },
   {
-    title: "Treasury scenario matrix",
-    visual: "treasury-matrix",
-    description: "Compares runway, emissions, liquidity support, and reserve assumptions under stress.",
+    title: "Redemption queue depth",
+    visual: "redemption-queue",
+    description: "Models how fast a fund or stablecoin can actually pay out under a concentrated exit.",
   },
   {
-    title: "Governance tree",
-    visual: "governance",
-    description: "Clarifies routine decisions, escalation paths, veto rights, and intervention logic.",
+    title: "MiCA / DORA control heatmap",
+    visual: "regulatory-heatmap",
+    description: "Scores each control point green, amber, or red against evidence, not policy language.",
   },
   {
-    title: "Liquidity routing diagram",
-    visual: "liquidity",
-    description: "Separates productive depth, external routing, rented liquidity, and leakage paths.",
+    title: "Settlement synchronization map",
+    visual: "settlement-sync",
+    description: "Tracks how far privacy-partitioned ledger domains drift before synchronization debt becomes an audit gap.",
   },
   {
-    title: "Simulation output",
-    visual: "simulation-output",
-    description: "Turns pressure scenarios into visible states, thresholds, and operating signals.",
+    title: "NAV drift monitor",
+    visual: "nav-drift",
+    description: "Flags the moment on-chain token state and off-chain fund accounting stop agreeing.",
   },
   {
-    title: "Economic system map",
-    visual: "economic-map",
-    description: "Connects token flow, treasury policy, governance, liquidity, and participant incentives.",
+    title: "Constraint commitment tree",
+    visual: "constraint-tree",
+    description: "Turns an agent's or contract's authorization boundary into a signed, tamper-evident record.",
   },
 ];
 
 export const advisoryServices = [
   {
-    title: "Economic Architecture",
-    problem: "Token, treasury, and incentive systems are often designed in separate documents.",
-    consequence: "Capital allocation becomes harder to govern when value flows and constraints drift apart.",
-    method: "Map value flows, constraints, emissions, participant behavior, and stress scenarios together.",
-    deliverable: "Economic architecture memo, incentive map, and scenario matrix.",
+    title: "Token & Reserve Architecture",
+    problem: "Stablecoin reserves, token economics, and redemption mechanics are often designed and documented separately.",
+    consequence: "Capital allocation becomes harder to govern when reserve policy and token design drift apart.",
+    method: "Map reserve composition, redemption rights, peg-defense mechanisms, and stress scenarios together.",
+    deliverable: "Reserve architecture memo, peg-stress map, and scenario matrix.",
   },
   {
-    title: "Coordination Systems",
-    problem: "Governance can look decentralized while decisions remain slow or ambiguous.",
-    consequence: "Response latency creates capture risk, operating delays, and weaker legitimacy under stress.",
-    method: "Define decision rights, escalation paths, delegation logic, and intervention constraints.",
-    deliverable: "Governance tree, coordination model, and operating rules.",
+    title: "Settlement & Custody Systems",
+    problem: "Settlement finality, custody segregation, and upgrade-key governance can look sound on paper while remaining unverified on-chain.",
+    consequence: "Audit and supervisory review expose gaps between the policy file and the deployed contracts.",
+    method: "Verify custody, segregation, upgrade-path, and reconciliation claims against deployed contracts, not descriptions.",
+    deliverable: "Settlement architecture map, custody control review, and audit evidence pack.",
   },
   {
-    title: "Market Infrastructure",
-    problem: "Liquidity can appear healthy while routing, depth quality, and funding exposure remain weak.",
-    consequence: "Capital becomes expensive, extractive, or unreliable when market structure is treated as external plumbing.",
-    method: "Review market structure, execution surfaces, market-maker assumptions, and liquidity incentives.",
-    deliverable: "Liquidity routing diagram, market-risk notes, and implementation priorities.",
+    title: "Tokenized Fund & RWA Infrastructure",
+    problem: "NAV, redemption liquidity, and collateral quality can appear healthy while reconciliation and concentration risk remain unclear.",
+    consequence: "Capital becomes expensive, extractive, or unreliable when fund infrastructure is treated as external plumbing.",
+    method: "Reconcile on-chain state against fund books, and model redemption depth, haircuts, and NAV VaR.",
+    deliverable: "NAV reconciliation report, liquidity concentration review, and remediation priorities.",
   },
   {
-    title: "Institutional Translation",
-    problem: "Serious partners need risk, controls, obligations, and operating logic made legible.",
-    consequence: "Adoption slows when economic design cannot be reviewed, challenged, or explained by non-native stakeholders.",
-    method: "Translate crypto-native systems into diligence-ready constraints and decision surfaces.",
-    deliverable: "Institutional briefing, risk map, and engagement-ready architecture summary.",
+    title: "Regulatory Translation (MiCA / DORA)",
+    problem: "Serious partners and supervisors need risk, controls, obligations, and operating logic made legible and evidenced.",
+    consequence: "Adoption slows when economic design cannot be reviewed, challenged, or evidenced by non-native stakeholders.",
+    method: "Translate token-native systems into diligence-ready, evidence-based MiCA/DORA control assessments.",
+    deliverable: "Scored control heatmap, findings register, and prioritised remediation roadmap.",
   },
 ];
 
@@ -472,7 +527,7 @@ export const observatoryHighlights = [
   {
     label: "Systems",
     title: "Implementation evidence",
-    description: "Repositories show execution logic, funding analytics, market-making systems, and coordination observatory work.",
+    description: "Repositories show stablecoin stress-testing, NAV reconciliation, settlement audit evidence, and RWA risk tooling.",
     href: "/research",
   },
   {
@@ -615,12 +670,25 @@ export const scopeAnchors = [
 
 export const founderProfile = {
   name: "Vishnu Govind",
-  role: "Founder, Universal Ventures",
+  role: "Founder, Universal Ventures — Utrecht",
   focus:
-    "Strategic systems architecture for digital asset systems, cryptoeconomic design, market structure, distributed coordination, and mechanism engineering.",
+    "I architect the economic and settlement layer of institutional digital asset systems: where token design, DLT infrastructure and regulatory constraint meet.",
   why:
-    "Universal Ventures exists to bridge theory and implementation: turning token, treasury, governance, liquidity, and infrastructure complexity into artifacts teams can review, stress-test, and operate.",
+    "Currently Strategic Systems Architect at Exponential Science, holding architectural authority over a protocol's economic and settlement design, and running Universal Ventures alongside it. Before digital assets: close to fifteen years across derivatives market-making (Mercantile Exchange Nepal), algorithmic proprietary trading (Hold Brothers, NYC), exchange and trading-systems product management, wealth-management infrastructure at Envestnet, and structured project finance. That background is why I treat incentives and liquidity as things that have to hold under stress rather than things that work on a whiteboard.",
 };
+
+export const credentials = [
+  "Formal response to the ECB Eurosystem's Project Appia consultation on tokenized wholesale settlement",
+  "Research affiliation, MiCA Crypto Alliance",
+  "Token-engineering diligence on venture investments, translated into enforceable deal terms",
+  "Fundraising strategy and partnerships (volunteer), WIQD — Quantum Delta NL",
+];
+
+export const education = [
+  "MBA Financial Management — IMT Ghaziabad",
+  "BTech Computer Science & Systems Engineering — University of Kerala",
+  "Financial Engineering & Risk Management certificate — Columbia University",
+];
 
 export const workingPrinciples = [
   "Constraint-first",
@@ -631,58 +699,85 @@ export const workingPrinciples = [
 ];
 
 export const researchObjectFilters = [
-  "Tokenomics",
-  "Treasury",
-  "Governance",
+  "Stablecoins",
+  "Tokenized Funds",
+  "Settlement",
+  "RWA",
+  "Compliance",
+  "Agentic AI",
   "Market Design",
-  "Coordination",
-  "Simulation",
-  "Infrastructure",
 ];
 
 export const researchObjects = [
   {
-    title: "Tokenomics Stress Map",
-    href: "https://universalventures9.wordpress.com/framework-library/",
-    type: "Framework",
-    domain: "Tokenomics",
-    problem: "Identify where incentives, emissions, liquidity, and treasury assumptions can break under pressure.",
+    title: "peglab",
+    href: "https://github.com/vishnugovind10/peglab",
+    type: "Repository",
+    domain: "Stablecoins",
+    problem: "Identify where reserve and peg-defense mechanisms break under redemption and collateral stress.",
     implementation: "High",
-    readTime: "Framework",
+    readTime: "Code",
   },
   {
-    title: "Temporal Liquidity Risk Simulation",
-    href: "https://universalventures9.wordpress.com/artifacts/",
-    type: "Simulation",
-    domain: "Liquidity",
-    problem: "Model timing risk when liquidity demand arrives faster than the system can rebalance.",
+    title: "navbridge",
+    href: "https://github.com/vishnugovind10/navbridge",
+    type: "Repository",
+    domain: "Tokenized Funds",
+    problem: "Reconcile on-chain token state against off-chain fund accounting to evidence NAV integrity.",
     implementation: "High",
-    readTime: "Simulation",
+    readTime: "Code",
   },
   {
-    title: "Mechanism Review Path",
-    href: "https://universalventures9.wordpress.com/mechanism-review/",
-    type: "Review path",
-    domain: "Mechanism Design",
-    problem: "Convert an uncertain mechanism problem into a diagnosis, constraint map, and failure analysis.",
+    title: "canton-synch-control",
+    href: "https://github.com/vishnugovind10/canton-synch-control",
+    type: "Repository",
+    domain: "Settlement",
+    problem: "Measure synchronization debt inside Canton Network deployments and produce audit evidence.",
     implementation: "High",
-    readTime: "Engagement path",
+    readTime: "Code",
   },
   {
-    title: "Research Access Path",
-    href: "https://universalventures9.wordpress.com/research-access/",
-    type: "Research path",
-    domain: "Research",
-    problem: "Give teams a lower-friction way to inspect frameworks, artifacts, and domain logic before advisory work.",
-    implementation: "Medium",
-    readTime: "Access layer",
+    title: "haircut",
+    href: "https://github.com/vishnugovind10/haircut",
+    type: "Repository",
+    domain: "RWA",
+    problem: "Quantify liquidity and redemption risk in tokenized real-world-asset pools with dynamic haircuts and NAV VaR.",
+    implementation: "High",
+    readTime: "Code",
+  },
+  {
+    title: "warrant",
+    href: "https://github.com/vishnugovind10/warrant",
+    type: "Repository",
+    domain: "Compliance",
+    problem: "Provide verifiable evidence, not just logs, that an AI agent stayed inside its authorization boundary.",
+    implementation: "High",
+    readTime: "Code",
+  },
+  {
+    title: "slotscope",
+    href: "https://github.com/vishnugovind10/slotscope",
+    type: "Repository",
+    domain: "Settlement",
+    problem: "Profile EVM state contention where parallel execution and compliance registries collide under load.",
+    implementation: "High",
+    readTime: "Code",
   },
   {
     title: "The Physics of Finality",
     href: "https://medium.com/coinmonks/the-physics-of-finality-how-alpenglow-turns-geography-into-governance-d71405f756c8",
     type: "Research Note",
-    domain: "Infrastructure",
+    domain: "Settlement",
     problem: "Explain how latency, topology, and geography become economic and governance variables.",
+    implementation: "Medium",
+    readTime: "Essay",
+  },
+  {
+    title: "The Rise of the Agentic Economy",
+    href: "https://medium.com/coinmonks/the-rise-of-the-agentic-economy-how-ai-agents-are-rewriting-the-rules-of-money-ee876d376452",
+    type: "Research Note",
+    domain: "Agentic AI",
+    problem: "Explain how autonomous economic actors change how verification, incentives, and trust need to be designed.",
     implementation: "Medium",
     readTime: "Essay",
   },
@@ -696,19 +791,10 @@ export const researchObjects = [
     readTime: "Code",
   },
   {
-    title: "MarketMaking",
-    href: "https://github.com/vishnugovind10/MarketMaking",
-    type: "Repository",
-    domain: "Liquidity",
-    problem: "Demonstrate bid-ask logic, inventory awareness, P&L monitoring, and risk stop conditions.",
-    implementation: "High",
-    readTime: "Code",
-  },
-  {
     title: "coordination-fabric",
     href: "https://github.com/vishnugovind10/coordination-fabric",
     type: "Repository",
-    domain: "Coordination",
+    domain: "Settlement",
     problem: "Visualize infrastructure coordination under routing, congestion, and pressure-state changes.",
     implementation: "High",
     readTime: "Code",

@@ -3,23 +3,26 @@ import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import {
   buyerOutcomes,
+  credentials,
+  education,
   founderProfile,
   proofObjects,
   workingPrinciples,
 } from "@/lib/content-model";
+import { socialLinks } from "@/lib/site";
 
 const operatingSignals = [
-  "Digital asset systems",
-  "Cryptoeconomic design",
-  "Market structure",
-  "Distributed coordination",
-  "Mechanism engineering",
+  "Institutional digital assets",
+  "Stablecoin mechanism design",
+  "Settlement architecture",
+  "MiCA / DORA readiness",
+  "Tokenized fund infrastructure",
 ];
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Universal Ventures is an independent economic systems advisory practice operating across economic design, market structure, and digital infrastructure.",
+    "Vishnu Govind — founder of Universal Ventures, an independent practice architecting the economic and settlement layer of institutional digital asset systems.",
 };
 
 export default function AboutPage() {
@@ -27,8 +30,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="A focused economic systems practice led by Vishnu Govind."
-        lede="Universal Ventures exists to bridge theory and implementation for digital asset systems: token design, treasury architecture, governance, liquidity, and coordination under real constraints."
+        title="A focused economic and settlement architecture practice led by Vishnu Govind."
+        lede="I architect the economic and settlement layer of institutional digital asset systems: where token design, DLT infrastructure and regulatory constraint meet."
       />
 
       <section className="border-b border-line">
@@ -69,6 +72,35 @@ export default function AboutPage() {
                   {principle}
                 </p>
               ))}
+            </div>
+
+            <div className="mt-10 border-t border-line pt-8">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                Institutional and regulatory record
+              </p>
+              <div className="mt-5 grid gap-4">
+                {credentials.map((item) => (
+                  <p key={item} className="border-t border-line pt-4 text-sm leading-6 text-muted">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 border-t border-line pt-8">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                Education
+              </p>
+              <div className="mt-5 grid gap-3 md:grid-cols-3">
+                {education.map((item) => (
+                  <p
+                    key={item}
+                    className="border border-line bg-surface p-4 text-sm leading-6 text-muted"
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="mt-10 border-t border-line pt-8">
@@ -114,6 +146,26 @@ export default function AboutPage() {
                   </Link>
                   <p className="mt-2 text-sm leading-6 text-muted">{object.output}</p>
                 </section>
+              ))}
+            </div>
+
+            <div className="mt-10 grid gap-3 border-t border-line pt-8 sm:flex sm:flex-wrap sm:items-center">
+              <a
+                href="mailto:vishnugovind10@gmail.com"
+                className="font-mono text-xs text-muted no-underline hover:text-accent"
+              >
+                vishnugovind10@gmail.com
+              </a>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs text-muted no-underline hover:text-accent"
+                >
+                  {link.label}
+                </a>
               ))}
             </div>
 
