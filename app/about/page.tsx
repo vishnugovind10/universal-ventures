@@ -150,12 +150,12 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10 grid gap-3 border-t border-line pt-8 sm:flex sm:flex-wrap sm:items-center">
-              <a
-                href="mailto:vishnugovind10@gmail.com"
+              <Link
+                href="/contact"
                 className="font-mono text-xs text-muted no-underline hover:text-accent"
               >
-                vishnugovind10@gmail.com
-              </a>
+                Contact form
+              </Link>
               {socialLinks.map((link) => (
                 <a
                   key={link.href}

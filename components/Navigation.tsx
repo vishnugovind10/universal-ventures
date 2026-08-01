@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { navItems, siteConfig } from "@/lib/site";
 
-export function Navigation() {
+export function Navigation({ assetBasePath = "" }: { assetBasePath?: string }) {
+  const brandMark = `${assetBasePath}/brand/universal-ventures-mark.png`;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line bg-background/90 backdrop-blur-xl">
       <div className="mx-auto flex h-full max-w-7xl items-center gap-5 px-5 md:px-8 lg:px-12">
@@ -13,11 +16,23 @@ export function Navigation() {
           className="flex min-w-0 shrink-0 items-center gap-3 no-underline"
           aria-label={`${siteConfig.name} home`}
         >
-          <span className="flex h-8 w-8 items-center justify-center border border-accent font-mono text-[0.66rem] font-semibold text-accent">
-            UV
+          <span className="flex h-8 w-8 overflow-hidden border border-accent/70 bg-surface">
+            <Image
+              src={brandMark}
+              alt=""
+              aria-hidden="true"
+              width={512}
+              height={512}
+              className="h-full w-full object-cover"
+            />
           </span>
-          <span className="hidden text-sm font-semibold tracking-normal text-foreground sm:block">
-            {siteConfig.name}
+          <span className="hidden grid-cols-1 leading-none sm:grid">
+            <span className="text-sm font-semibold tracking-normal text-foreground">
+              {siteConfig.name}
+            </span>
+            <span className="mt-1 font-mono text-[0.56rem] uppercase tracking-[0.14em] text-subtle">
+              Economic architecture
+            </span>
           </span>
         </Link>
 

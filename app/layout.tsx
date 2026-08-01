@@ -27,11 +27,13 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 const basePath = process.env.PAGES_BASE_PATH || "";
+const normalizedSiteUrl = siteConfig.url.replace(/\/$/, "");
+const ogImageUrl = `${normalizedSiteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Economic & Settlement Architecture for Institutional Digital Assets`,
+    default: `${siteConfig.name} - Economic & Settlement Architecture for Institutional Digital Assets`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     "token due diligence",
   ],
   openGraph: {
-    title: `${siteConfig.name} — Economic & Settlement Architecture for Institutional Digital Assets`,
+    title: `${siteConfig.name} - Economic & Settlement Architecture for Institutional Digital Assets`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -65,18 +67,18 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${basePath}/og-image.png`,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "Universal Ventures — Economic and settlement architecture for institutional digital assets",
+        alt: "Universal Ventures systems architecture cover image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Economic & Settlement Architecture for Institutional Digital Assets`,
+    title: `${siteConfig.name} - Economic & Settlement Architecture for Institutional Digital Assets`,
     description: siteConfig.description,
-    images: [`${basePath}/og-image.png`],
+    images: [ogImageUrl],
   },
   icons: {
     icon: `${basePath}/icon.svg`,
@@ -94,7 +96,7 @@ function StructuredData() {
         name: siteConfig.name,
         url: siteConfig.url,
         description: siteConfig.description,
-        logo: `${siteConfig.url}/icon.svg`,
+        logo: `${siteConfig.url}/brand/universal-ventures-mark.png`,
         sameAs: socialLinks.map((link) => link.href),
         founder: {
           "@type": "Person",
@@ -171,7 +173,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <div className="flex min-h-screen flex-col">
-          <Navigation />
+          <Navigation assetBasePath={basePath} />
           <main id="main-content" className="flex-1 pt-16">
             {children}
           </main>

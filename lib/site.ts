@@ -1,6 +1,12 @@
+const pagesBasePath = process.env.PAGES_BASE_PATH || "";
+
+const defaultSiteUrl = pagesBasePath
+  ? `https://vishnugovind10.github.io${pagesBasePath}`
+  : "https://universal-ventures.vercel.app";
+
 export const siteConfig = {
   name: "Universal Ventures",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://universal-ventures.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl,
   description:
     "Independent practice designing and stress-testing token economics, stablecoin mechanisms and settlement architecture for institutions, protocols and funds. MiCA/DORA readiness diagnostics. Eleven open-source verification tools.",
 };
